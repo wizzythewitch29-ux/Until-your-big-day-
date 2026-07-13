@@ -57,4 +57,18 @@ button {
 .birthday-message h1 {
     color: #ffd1ec;
 }
+.container {
+    animation: fadeIn 2s ease-in-out;
+}
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
