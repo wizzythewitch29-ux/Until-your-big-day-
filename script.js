@@ -20,6 +20,8 @@ function openLetter() {
 }
 
 document.getElementById("envelope").onclick = function() {
-    document.getElementById("letter").style.display = "block";
+   const letter = document.getElementById("letter");
+letter.style.display = "block";
+letter.classList.add("show");
     document.getElementById("envelope").style.display = "none";
 };
