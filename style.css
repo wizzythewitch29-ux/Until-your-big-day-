@@ -91,11 +91,13 @@ h1{
 }
 
 #countdown{
-    font-size:2rem;
-    font-weight:bold;
-    margin-bottom:40px;
-    color:#fff;
-    text-shadow:0 0 15px #ffc7ef;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:40px 0;
+}
 }
 
 button{
@@ -286,4 +288,42 @@ button:hover{
     }
 
 }
-    
+    .time-box{
+    width:85px;
+    height:85px;
+
+    background:rgba(255,248,235,0.12);
+
+    border:1px solid rgba(255,255,255,0.25);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:22px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+        0 0 20px rgba(255,245,220,.15);
+
+    transition:.3s;
+}
+
+.time-box:hover{
+    transform:translateY(-5px);
+}
+
+.time-number{
+    font-size:28px;
+    font-weight:bold;
+    color:#fffaf0;
+}
+
+.time-label{
+    margin-top:6px;
+    font-size:13px;
+    color:#ffe8c8;
+    letter-spacing:1px;
+}
