@@ -11,6 +11,9 @@ function updateCountdown() {
 
     document.getElementById("countdown").innerHTML =
         `${days} Days<br>${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+    if (difference <= 0) {
+    document.querySelector(“.birthday-message”).style.display = “block”;
+}
 }
 
 updateCountdown();
