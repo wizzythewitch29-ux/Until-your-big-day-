@@ -15,3 +15,11 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+function openLetter() {
+    document.getElementById("envelope").style.display = "block";
+}
+
+document.getElementById("envelope").onclick = function() {
+    document.getElementById("letter").style.display = "block";
+    document.getElementById("envelope").style.display = "none";
+};
