@@ -4,150 +4,139 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
 body {
     min-height: 100vh;
-    background: linear-gradient(135deg, #ffd6e7, #fff0f6);
-    color: #5a2a3a;
-    overflow-x: hidden;
+    background: radial-gradient(circle at top, #23395d, #07111f 70%);
+    color: white;
+    overflow: hidden;
 }
-
-/* Main container */
-.container {
+/* Starry sky effect */
+body::before {
+    content: "";
+    position: absolute;
     width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 80px 80px, 120px 120px;
+    background-position: 0 0, 40px 60px;
+    opacity: 0.4;
+    animation: stars 8s linear infinite;
+}
+@keyframes stars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-80px);
+    }
+}
+.container {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-
-/* Homepage card */
+/* Main glass card */
 .card {
-    background: rgba(255, 255, 255, 0.8);
     width: 90%;
     max-width: 700px;
-    padding: 40px;
-    border-radius: 30px;
+    padding: 45px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(255, 105, 150, 0.25);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    backdrop-filter: blur(12px);
+    box-shadow: 
+        0 0 40px rgba(120,170,255,0.3);
 }
-
-/* Title */
+.heart {
+    font-size: 45px;
+    margin-bottom: 15px;
+    animation: glow 2s infinite;
+}
+@keyframes glow {
+    50% {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 15px white);
+    }
+}
 h1 {
     font-size: 3rem;
-    color: #ff4f91;
+    color: #d8e8ff;
     margin-bottom: 15px;
 }
-
 .subtitle {
+    color: #b8cdf5;
     font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #7a4055;
+    margin-bottom: 35px;
 }
-
-/* Countdown */
+/* Countdown boxes */
 .countdown {
     display: flex;
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
-    margin: 30px 0;
 }
-
 .time-box {
-    background: #ff8fbc;
-    color: white;
     width: 110px;
     padding: 20px 10px;
+    background: rgba(255,255,255,0.12);
     border-radius: 20px;
-    box-shadow: 0 5px 15px rgba(255, 79, 145, 0.3);
+    border: 1px solid rgba(255,255,255,0.25);
+    box-shadow: 0 0 20px rgba(150,190,255,0.3);
 }
-
 .time-box span {
     display: block;
     font-size: 2rem;
     font-weight: bold;
+    color: white;
 }
-
 .time-box p {
-    font-size: 0.9rem;
-    margin-top: 5px;
+    color: #c9ddff;
 }
-
 /* Button */
 button {
+    margin-top: 35px;
+    padding: 15px 40px;
     border: none;
-    background: #ff4f91;
-    color: white;
-    padding: 15px 35px;
     border-radius: 50px;
+    background: linear-gradient(45deg,#4b7bec,#74b9ff);
+    color: white;
     font-size: 1rem;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
-
 button:hover {
-    background: #e83e7c;
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #74b9ff;
 }
-
-/* Heart decoration */
-.heart {
-    font-size: 40px;
-    animation: heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Floating hearts */
+/* Floating stars/hearts */
 .floating-heart {
     position: absolute;
     font-size: 25px;
-    animation: float 6s linear infinite;
+    animation: float 7s infinite linear;
     opacity: 0.7;
 }
-
 @keyframes float {
-    0% {
+    from {
         transform: translateY(100vh);
     }
-
-    100% {
+    to {
         transform: translateY(-10vh);
     }
 }
-
-/* Mobile responsive */
-@media (max-width: 600px) {
-
+/* Mobile */
+@media(max-width:600px){
     h1 {
         font-size: 2.2rem;
     }
-
     .card {
-        padding: 25px;
+        padding: 30px;
     }
-
     .time-box {
         width: 90px;
-        padding: 15px 5px;
-    }
-
-    .time-box span {
-        font-size: 1.5rem;
     }
 }
