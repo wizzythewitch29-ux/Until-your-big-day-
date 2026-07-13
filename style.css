@@ -1,157 +1,593 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-body {
-    min-height: 100vh;
-    position: relative;
-    background: radial-gradient(circle at top, #23395d, #07111f 70%);
-    color: white;
-    overflow: hidden;
+
+html{
+    scroll-behavior:smooth;
 }
-/* Starry sky effect */
-body::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
+
+body{
+    font-family:"Poppins",sans-serif;
+    min-height:100vh;
+    overflow:hidden;
+    color:#fff;
+    background:
+    radial-gradient(circle at top,#26497a 0%,#132947 35%,#07111f 100%);
+    position:relative;
+}
+
+/* ---------- SKY ---------- */
+
+.sky{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 20%,rgba(74,118,197,.22),transparent 28%),
+    radial-gradient(circle at 80% 30%,rgba(255,228,156,.08),transparent 20%);
+    z-index:-5;
+}
+
+/* ---------- STARS ---------- */
+
+.stars{
+    position:fixed;
+    inset:0;
     background-image:
-        radial-gradient(white 1px, transparent 1px),
-        radial-gradient(#ffffff 1px, transparent 1px);
-    background-size: 80px 80px, 120px 120px;
-    background-position: 0 0, 40px 60px;
-    opacity: 0.4;
-    animation: stars 8s linear infinite;
+    radial-gradient(#fff7db 1px,transparent 1px),
+    radial-gradient(#ffd96f 2px,transparent 2px);
+    background-size:
+    70px 70px,
+    150px 150px;
+    opacity:.8;
+    animation:twinkle 5s ease-in-out infinite alternate;
+    z-index:-4;
 }
-@keyframes stars {
-    from {
-        transform: translateY(0);
+
+/* ---------- CLOUDS ---------- */
+
+.cloud{
+    position:fixed;
+    width:550px;
+    height:180px;
+    border-radius:50%;
+    filter:blur(45px);
+    opacity:.15;
+    z-index:-3;
+}
+
+.cloud1{
+    background:#5e88c7;
+    top:90px;
+    left:-120px;
+    animation:moveCloud1 45s linear infinite;
+}
+
+.cloud2{
+    background:#6c8dc5;
+    bottom:120px;
+    right:-150px;
+    animation:moveCloud2 55s linear infinite;
+}
+
+/* ---------- MOON ---------- */
+
+.moon{
+
+    position:fixed;
+
+    top:40px;
+
+    right:40px;
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    #fffef8,
+    #fff3d1,
+    #ffe6b0);
+
+    box-shadow:
+    0 0 40px rgba(255,248,212,.8),
+    0 0 90px rgba(255,248,212,.5),
+    0 0 180px rgba(255,248,212,.25);
+
+    animation:moonGlow 5s ease-in-out infinite;
+
+    z-index:-2;
+}
+
+/* ---------- PAGE ---------- */
+
+.page{
+    min-height:100vh;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+}
+
+.hidden{
+    display:none!important;
+}
+
+/* ---------- GLASS CARD ---------- */
+
+.glass{
+
+    width:90%;
+
+    max-width:780px;
+
+    padding:50px;
+
+    border-radius:35px;
+
+    backdrop-filter:blur(16px);
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.08);
+
+}
+
+/* ---------- TITLE ---------- */
+
+h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    color:#fff8f1;
+
+    margin-bottom:20px;
+
+    text-shadow:
+    0 0 18px rgba(255,255,255,.3);
+
+}
+
+.subtitle{
+
+    max-width:620px;
+
+    margin:auto;
+
+    color:#f3e7cb;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+/* ---------- COUNTDOWN ---------- */
+
+#countdown{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin:35px 0;
+    font-size:1.2rem;
+    color:#fff9ee;
+    font-weight:500;
+}
+
+/* ---------- BUTTON ---------- */
+
+button{
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#fff4d7,#ffe3a4);
+
+    color:#3b2b17;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 0 25px rgba(255,239,190,.35);
+
+}
+
+button:hover{
+
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+    0 0 35px rgba(255,239,190,.65);
+
+}
+
+/* ---------- ENVELOPE ---------- */
+
+.envelope-wrapper{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.envelope{
+
+    width:320px;
+
+    height:210px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.6s;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+.back{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:14px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.15)),
+    url("https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Starry_Night.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    box-shadow:0 0 35px rgba(255,255,255,.2);
+
+}
+
+.cover{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+    linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1)),
+    url("https://upload.wikimedia.org/wikipedia/commons/e/ea/The_Starry_Night.jpg");
+
+    background-size:cover;
+
+    clip-path:polygon(0 0,100% 0,50% 60%);
+
+    transform-origin:top;
+
+    transition:.8s;
+
+}
+
+.envelope:hover .cover{
+
+    transform:rotateX(180deg);
+
+}
+
+.paper{
+
+    position:absolute;
+
+    left:50%;
+
+    top:30px;
+
+    transform:translateX(-50%);
+
+    width:82%;
+
+    height:160px;
+
+    border-radius:10px;
+
+    background:#fffaf0;
+
+}
+
+.seal{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:28px;
+
+    transform:translateX(-50%);
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:#d4a43f;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    box-shadow:0 0 18px rgba(255,223,150,.5);
+
+}
+
+.tap{
+
+    margin-top:35px;
+
+    color:#f3e8c8;
+
+    font-size:1.1rem;
+
+}
+/* ---------- LETTER ---------- */
+
+.letter{
+
+    width:90%;
+
+    max-width:760px;
+
+    max-height:80vh;
+
+    overflow-y:auto;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,251,242,.97);
+
+    color:#3d2b22;
+
+    box-shadow:
+    0 0 45px rgba(255,255,255,.18);
+
+    animation:letterFade .9s ease;
+
+}
+
+.letter h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:2.8rem;
+
+    color:#234a78;
+
+    margin-bottom:25px;
+
+}
+
+.letter p{
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    color:#4b3a31;
+
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+.letter::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.letter::-webkit-scrollbar-thumb{
+
+    background:#d9b15f;
+
+    border-radius:20px;
+
+}
+
+/* ---------- ANIMATIONS ---------- */
+
+@keyframes twinkle{
+
+    from{
+
+        opacity:.45;
+
     }
-    to {
-        transform: translateY(-80px);
+
+    to{
+
+        opacity:.9;
+
     }
+
 }
-.container {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-/* Main glass card */
-.card {
-    width: 90%;
-    max-width: 700px;
-    padding: 45px;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 30px;
-    backdrop-filter: blur(12px);
-    box-shadow: 
-        0 0 40px rgba(120,170,255,0.3);
-}
-.heart {
-    font-size: 45px;
-    margin-bottom: 15px;
-    animation: glow 2s infinite;
-}
-@keyframes glow {
-    50% {
-        transform: scale(1.15);
-        filter: drop-shadow(0 0 15px white);
+
+@keyframes moonGlow{
+
+    50%{
+
+        transform:scale(1.04);
+
+        box-shadow:
+        0 0 55px rgba(255,248,212,.9),
+        0 0 110px rgba(255,248,212,.55),
+        0 0 220px rgba(255,248,212,.3);
+
     }
+
 }
-h1 {
-    font-size: 3rem;
-    color: #d8e8ff;
-    margin-bottom: 15px;
-}
-.subtitle {
-    color: #b8cdf5;
-    font-size: 1.2rem;
-    margin-bottom: 35px;
-}
-/* Countdown boxes */
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-.time-box {
-    width: 110px;
-    padding: 20px 10px;
-    background: rgba(255,255,255,0.12);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.25);
-    box-shadow: 0 0 20px rgba(150,190,255,0.3);
-}
-.time-box span {
-    display: block;
-    font-size: 2rem;
-    font-weight: bold;
-    color: white;
-}
-.time-box p {
-    color: #c9ddff;
-}
-/* Button */
-button {
-    margin-top: 35px;
-    padding: 15px 40px;
-    border: none;
-    border-radius: 50px;
-    background: linear-gradient(45deg,#4b7bec,#74b9ff);
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-}
-button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 25px #74b9ff;
-}
-/* Floating stars/hearts */
-.floating-heart {
-    position: absolute;
-    font-size: 25px;
-    animation: float 7s infinite linear;
-    opacity: 0.7;
-}
-@keyframes float {
-    from {
-        transform: translateY(100vh);
+
+@keyframes moveCloud1{
+
+    from{
+
+        transform:translateX(-120px);
+
     }
-    to {
-        transform: translateY(-10vh);
+
+    to{
+
+        transform:translateX(180px);
+
     }
+
 }
-/* Mobile */
-@media(max-width:600px){
-    h1 {
-        font-size: 2.2rem;
+
+@keyframes moveCloud2{
+
+    from{
+
+        transform:translateX(140px);
+
     }
-    .card {
-        padding: 30px;
+
+    to{
+
+        transform:translateX(-160px);
+
     }
-    .time-box {
-        width: 90px;
-    }
+
 }
-.hidden {
-    display: none !important;
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
 }
-.page {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    padding: 30px;
+
+@keyframes letterFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+    .moon{
+
+        width:120px;
+
+        height:120px;
+
+        top:20px;
+
+        right:20px;
+
+    }
+
+    h1{
+
+        font-size:2.7rem;
+
+    }
+
+    .subtitle{
+
+        font-size:1rem;
+
+    }
+
+    .glass{
+
+        padding:35px 22px;
+
+    }
+
+    .envelope{
+
+        width:260px;
+
+        height:180px;
+
+    }
+
+    .letter{
+
+        padding:28px;
+
+    }
+
+    .letter h2{
+
+        font-size:2.1rem;
+
+    }
+
+    .letter p{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
 }
