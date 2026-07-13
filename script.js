@@ -80,7 +80,7 @@ envelope.addEventListener("click", () => {
 
 flap.style.transform = "rotateX(180deg)";
 
-    setTimeout(() => {
+setTimeout(() => {
 
         envelopePage.classList.add("hidden");
 
