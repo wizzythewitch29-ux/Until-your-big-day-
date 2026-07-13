@@ -1,22 +1,38 @@
-const birthday = new Date("August 17, 2026 00:00:00");
-
-function updateCountdown() {
-    const now = new Date();
-    const difference = birthday - now;
-
-    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-        `${days} Days<br>${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
-
-    if (difference <= 0) {
-        document.getElementById(“birthdayMessage”).style.display = "block";
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffd6e7, #fff);
+    text-align: center;
+    min-height: 100vh;
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+h1 {
+    margin-top: 50px;
+    color: #ff4f9a;
+    font-size: 40px;
+}
 
+#countdown {
+    margin-top: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff4f9a;
+    line-height: 1.5;
+}
+
+.birthday-message {
+    display: none;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.birthday-message h1 {
+    font-size: 40px;
+    color: #ff4f9a;
+}
+
+.birthday-message p {
+    font-size: 20px;
+    color: #555;
+}
