@@ -15,13 +15,24 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
-function openLetter() {
-    document.getElementById("envelope").style.display = "block";
-}
+function openLetter(){
 
-document.getElementById("envelope").onclick = function() {
-   const letter = document.getElementById("letter");
-letter.style.display = "block";
-letter.classList.add("show");
-    document.getElementById("envelope").style.display = "none";
-};
+    const envelope = document.getElementById(“envelope”);
+
+    envelope.style.display=“block”;
+
+    envelope.onclick=function(){
+
+        envelope.classList.add(“open”);
+
+        setTimeout(function(){
+
+            envelope.style.display=“none”;
+
+            document.getElementById(“letter”).style.display=“block”;
+
+        },900);
+
+    }
+
+}
