@@ -58,3 +58,17 @@ button:hover {
 
 .moon{
     position:fixed
+.birthday-message {
+    margin-top: 40px;
+    text-align: center;
+    display: none;
+}
+
+.birthday-message h1 {
+    font-size: 40px;
+    color: pink;
+}
+
+.birthday-message p {
+    font-size: 20px;
+}
