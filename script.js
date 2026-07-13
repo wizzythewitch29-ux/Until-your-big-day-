@@ -1,7 +1,7 @@
 const birthday = new Date("August 17, 2026 00:00:00");
 
 function updateCountdown() {
-    const now = new Date(" august 17, 2026 00:00:00");
+    const now = new Date();
     const difference = birthday - now;
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -11,9 +11,10 @@ function updateCountdown() {
 
     document.getElementById("countdown").innerHTML =
         `${days} Days<br>${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+
     if (difference <= 0) {
-    document.querySelector(“.birthday-message”).style.display = “block”;
-}
+        document.querySelector(".birthday-message").style.display = "block";
+    }
 }
 
 updateCountdown();
