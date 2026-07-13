@@ -9,12 +9,8 @@ function updateCountdown() {
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    document.getElementById(“countdown”).innerHTML =
+    document.getElementById("countdown").innerHTML =
         `${days} Days<br>${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
-
-    if (difference <= 0) {
-        document.getElementById("birthdayMessage").style.display = "block";
-    }
 }
 
 updateCountdown();
