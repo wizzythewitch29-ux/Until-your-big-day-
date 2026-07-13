@@ -1,302 +1,289 @@
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background: linear-gradient(#080018, #1b0033);
-    color: white;
-    font-family: “Georgia”, serif;
-    overflow: hidden;
+/* ------- GENERAL -——-- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container {
-    text-align: center;
-    padding-top: 80px;
+body{
+    font-family:Georgia, serif;
+    background:linear-gradient(to bottom,#09041f,#1b0f38,#2d1458);
+    overflow:hidden;
+    color:white;
 }
 
-h1 {
-    font-size: 45px;
-    color: #ffd6f6;
-    text-shadow: 0 0 15px #ff9de2;
+.page{
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:opacity .8s ease;
 }
 
-h2 {
-    color: #e8c7ff;
-    font-size: 25px;
+.hidden{
+    display:none;
+}
+/* ------- STARS -——-- */
+
+.stars{
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(white 1px,transparent 1px);
+    background-size:45px 45px;
+    opacity:.6;
+    animation:twinkle 3s infinite alternate;
+    z-index:-3;
 }
 
-#countdown {
-    margin-top: 40px;
-    font-size: 35px;
-    color: #fff;
-    text-shadow: 0 0 20px #ffb6ff;
-}
+@keyframes twinkle{
 
-p {
-    font-size: 20px;
-    color: #f5dff5;
-    line-height: 1.6;
-}
-
-button {
-    margin-top: 30px;
-    padding: 15px 30px;
-    border-radius: 30px;
-    border: none;
-    background: #ff9de2;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.birthday-message {
-    display: none;
-    text-align: center;
-    margin-top: 40px;
-}
-
-.birthday-message h1 {
-    color: #ffd1ec;
-}
-.container {
-    animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.stars {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: twinkle 3s infinite alternate;
-    z-index: -1;
-}
-
-@keyframes twinkle {
-    from {
-        opacity: 0.4;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-.envelope {
-    display: none;
-    margin: 40px auto;
-    font-size: 70px;
-    text-align: center;
-    cursor: pointer;
-    animation: float 2s infinite ease-in-out;
-}
-
-.envelope p {
-    font-size: 18px;
-}
-
-.letter {
-    display: none;
-    background: rgba(30, 15, 45, 0.95);
-    color: #ffd6f6;
-    width: 80%;
-    max-width: 400px;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 20px;
-    line-height: 1.8;
-    box-shadow: 0 0 30px #ff9de2;
-    border: 1px solid #ffb6e6;
-}
-
-.letter h2 {
-    color: #fff0fa;
-}
-.letter {
-    display: none;
-    background: #1e0f2d !important;
-    color: #ffd6f6 !important;
-    width: 80%;
-    max-width: 400px;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 20px;
-    line-height: 1.8;
-    box-shadow: 0 0 30px #ff9de2;
-    border: 1px solid #ffb6e6;
-}
-
-.letter {
-    animation: letterOpen 1s ease;
-}
-
-@keyframes letterOpen {
-    from {
-        opacity: 0;
-        transform: scale(0.7) translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-.letter.show {
-    animation: letterOpen 1s ease;
-}
-
-@keyframes letterOpen {
-    from {
-        opacity: 0;
-        transform: scale(0.8) translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
-}
-.envelope {
-    display: none;
-    margin: 40px auto;
-    text-align: center;
-    cursor: pointer;
-    animation: float 2s ease-in-out infinite;
-}
-
-.envelope .icon {
-    font-size: 80px;
-}
-
-.envelope p {
-    font-size: 18px;
-    color: #ffd6f6;
-    margin-top: 10px;
-}
-.letter {
-    display: none;
-    width: 90%;
-    max-width: 650px;
-    max-height: 80vh;
-    margin: 30px auto;
-    padding: 35px;
-    overflow-y: auto;
-
-    background: #1e0f2d;
-    color: #ffd6f6;
-
-    border-radius: 25px;
-    border: 1px solid #ffb6e6;
-    box-shadow: 0 0 35px rgba(255,182,230,.4);
-
-    animation: letterOpen .8s ease forwards;
-}
-
-.letter h2{
-    text-align:center;
-    color:#fff;
-    margin-bottom:20px;
-}
-
-.letter p{
-    line-height:2;
-    font-size:18px;
-}
-
-@keyframes float{
-    0%,100%{
-        transform:translateY(0);
-    }
-    50%{
-        transform:translateY(-12px);
-    }
-}
-
-@keyframes letterOpen{
     from{
-        opacity:0;
-        transform:translateY(60px) scale(.95);
+        opacity:.3;
     }
 
     to{
-        opacity:1;
-        transform:translateY(0) scale(1);
+        opacity:.9;
     }
+
 }
-.envelope{
-    display:none;
-    position:relative;
-    width:240px;
-    height:170px;
-    margin:70px auto;
+/* ------- MOON -——-- */
+
+.moon{
+    position:fixed;
+    top:50px;
+    right:50px;
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#fff8dc;
+
+    box-shadow:
+    0 0 30px #fff8dc,
+    0 0 80px rgba(255,255,220,.4);
+
+    z-index:-2;
+}
+/* ------- HOME -——-- */
+
+.container{
+    width:90%;
+    max-width:420px;
+    text-align:center;
+}
+
+h1{
+    font-size:2.2rem;
+    color:#ffe8f5;
+    margin-bottom:20px;
+    text-shadow:0 0 15px #ffb4df;
+}
+
+.subtitle{
+    color:#efd9ff;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+#countdown{
+    font-size:2rem;
+    font-weight:bold;
+    margin-bottom:40px;
+    color:#fff;
+    text-shadow:0 0 15px #ffc7ef;
+}
+
+button{
+    padding:16px 34px;
+    border:none;
+    border-radius:40px;
     cursor:pointer;
+
+    background:#ff9ecf;
+    color:white;
+
+    font-size:17px;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
+/* ------- ENVELOPE -——-- */
+
+.envelope-wrapper{
+    text-align:center;
+}
+
+.envelope{
+
+    width:240px;
+    height:160px;
+
+    position:relative;
+
+    cursor:pointer;
+
     animation:float 3s ease-in-out infinite;
+
 }
 
 .envelope-back{
+
     position:absolute;
+
     width:100%;
     height:100%;
-    background:#f8c8dc;
+
+    background:#f7d9b9;
+
     border-radius:8px;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
 }
 
 .envelope-flap{
+
     position:absolute;
-    top:0;
-    left:0;
 
     width:0;
     height:0;
 
     border-left:120px solid transparent;
     border-right:120px solid transparent;
-    border-top:90px solid #ff9fcf;
+    border-top:90px solid #ebc18b;
 
     transform-origin:top;
     transition:.8s;
+
 }
+.letter-preview{
 
-.letter-paper{
     position:absolute;
-    left:15px;
-    top:20px;
 
-    width:210px;
-    height:130px;
+    left:20px;
+    top:15px;
 
-    background:white;
-    border-radius:6px;
+    width:200px;
+    height:120px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    background:#fffdf8;
 
-    font-size:45px;
+    border-radius:5px;
 
     transition:.8s;
+
 }
 
-.tap-text{
-    margin-top:190px;
-    color:#ffd6f6;
-    text-align:center;
-    font-size:18px;
+.tapText{
+
+    margin-top:25px;
+    color:#ffe6f6;
+    line-height:1.6;
+
 }
+
 .envelope.open .envelope-flap{
+
     transform:rotateX(180deg);
+
 }
 
-.envelope.open .letter-paper{
-    transform:translateY(-90px);
+.envelope.open .letter-preview{
+
+    transform:translateY(-70px);
+
 }
+/* ------- LETTER -——-- */
+
+.letter{
+
+    width:92%;
+    max-width:500px;
+
+    height:80vh;
+
+    background:#fffdf8;
+
+    color:#4a2d18;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    overflow-y:auto;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+}
+
+.letter h2{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+.letter p{
+
+    line-height:2;
+    font-size:18px;
+
+}
+
+#continueBtn{
+
+    margin-top:35px;
+    width:100%;
+
+}
+/* ------- FLOAT -——-- */
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* -——— PHONE ------- */
+
+@media(max-width:600px){
+
+    h1{
+
+        font-size:1.8rem;
+
+    }
+
+    #countdown{
+
+        font-size:1.6rem;
+
+    }
+
+    .moon{
+
+        width:90px;
+        height:90px;
+
+        right:20px;
+        top:20px;
+
+    }
+
+}
+    
