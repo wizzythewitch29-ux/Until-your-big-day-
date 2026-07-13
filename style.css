@@ -1,74 +1,22 @@
-body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom, #081229, #17396b, #4d78c7);
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
+const birthday = new Date("August 17, 2026 00:00:00");
+
+function updateCountdown() {
+    const now = new Date();
+    const difference = birthday - now;
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+        `${days} Days<br>${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+
+    if (difference <= 0) {
+        document.getElementById(“birthdayMessage”).style.display = "block";
+    }
 }
 
-.container {
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(10px);
-    padding: 40px;
-    border-radius: 25px;
-    width: 80%;
-    max-width: 700px;
-}
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
-h1 {
-    color: #ffd6e8;
-    font-size: 50px;
-}
-
-h2 {
-    color: #cde8ff;
-}
-
-#countdown {
-    font-size: 38px;
-    margin: 25px 0;
-    color: #fff4b2;
-    font-weight: bold;
-}
-
-p {
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-button {
-    margin-top: 25px;
-    padding: 15px 35px;
-    border: none;
-    border-radius: 35px;
-    background: #ffd6e8;
-    color: #17396b;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-/* Moon */
-
-.moon{
-    position:fixed
-.birthday-message {
-    margin-top: 40px;
-    text-align: center;
-    display: none;
-}
-
-.birthday-message h1 {
-    font-size: 40px;
-    color: pink;
-}
-
-.birthday-message p {
-    font-size: 20px;
-}
