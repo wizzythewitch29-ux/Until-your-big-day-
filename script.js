@@ -15,9 +15,10 @@ function updateCountdown() {
     const difference = birthday - now;
 
     if (difference <= 0) {
-        countdown.innerHTML = “🎉 Happy Birthday! 🎉”;
+        countdown.innerHTML = "🎉 Happy Birthday! 🎉";
         return;
     }
+
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
     const hours = Math.floor(
@@ -42,50 +43,52 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
-/* ------- OPEN SURPRISE -——-- */
 
-surpriseBtn.addEventListener(“click”, () => {
+/* ---------- OPEN SURPRISE ---------- */
 
-    home.style.opacity = “0”;
+surpriseBtn.addEventListener("click", () => {
+
+    home.style.opacity = "0";
 
     setTimeout(() => {
 
-        home.classList.add(“hidden”);
+        home.classList.add("hidden");
 
-        envelopePage.classList.remove(“hidden”);
+        envelopePage.classList.remove("hidden");
 
-        envelopePage.style.opacity = “0”;
+        envelopePage.style.opacity = "0";
 
         setTimeout(() => {
 
-            envelopePage.style.opacity = “1”;
+            envelopePage.style.opacity = "1";
 
         }, 100);
 
     }, 700);
 
 });
-/* ------- OPEN ENVELOPE -——-- */
 
-envelope.addEventListener(“click”, () => {
+/* ---------- OPEN ENVELOPE ---------- */
 
-    envelope.classList.add(“open”);
+envelope.addEventListener("click", () => {
+
+    envelope.classList.add("open");
 
     setTimeout(() => {
 
-        envelopePage.style.opacity = “0”;
+        envelopePage.style.opacity = "0";
 
         setTimeout(() => {
 
-            envelopePage.classList.add(“hidden”);
+            envelopePage.classList.add("hidden");
 
-            letterPage.classList.remove(“hidden”);
+            letterPage.classList.remove("hidden");
 
-            letterPage.style.opacity = “0”;
+            letterPage.style.opacity = "0";
 
             setTimeout(() => {
 
-                letterPage.style.opacity = “1”;
+                letterPage.style.opacity = "1";
 
             }, 100);
 
