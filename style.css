@@ -121,4 +121,24 @@ button {
 .letter h2 {
     color: #fff0fa;
 }
+.letter {
+    display: none;
+    background: #1e0f2d !important;
+    color: #ffd6f6 !important;
+    width: 80%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
+    line-height: 1.8;
+    box-shadow: 0 0 30px #ff9de2;
+    border: 1px solid #ffb6e6;
+}
 
+.letter h2 {
+    color: #fff0fa !important;
+}
+
+.letter p {
+    color: #ffd6f6 !important;
+}
