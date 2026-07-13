@@ -1,7 +1,7 @@
 const birthday = new Date("August 17, 2026 00:00:00");
 
 function updateCountdown() {
-    const now = new Date();
+    const now = new Date(" august 17, 2026 00:00:00");
     const difference = birthday - now;
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
