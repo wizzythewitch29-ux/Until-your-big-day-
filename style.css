@@ -91,3 +91,40 @@ button {
         opacity: 1;
     }
 }
+.envelope {
+    display: none;
+    margin: 40px auto;
+    font-size: 70px;
+    text-align: center;
+    cursor: pointer;
+    animation: float 2s infinite ease-in-out;
+}
+
+.envelope p {
+    font-size: 18px;
+}
+
+.letter {
+    display: none;
+    background: rgba(255, 240, 250, 0.95);
+    color: #5a1748;
+    width: 80%;
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 20px;
+    line-height: 1.6;
+    box-shadow: 0 0 30px pink;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
