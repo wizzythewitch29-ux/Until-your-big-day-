@@ -254,7 +254,7 @@ button:hover{
 
 }
 
-.back{
+.envelope-back{
 
     position:absolute;
 
@@ -274,7 +274,7 @@ button:hover{
 
 }
 
-.cover{
+.envelope-flap{
 
     position:absolute;
 
@@ -302,7 +302,7 @@ button:hover{
 
 }
 
-.paper{
+.letter-preview{
 
     position:absolute;
 
@@ -322,7 +322,7 @@ button:hover{
 
 }
 
-.seal{
+.wax-seal{
 
     position:absolute;
 
@@ -352,7 +352,7 @@ button:hover{
 
 }
 
-.tap{
+.tapText{
 
     margin-top:35px;
 
