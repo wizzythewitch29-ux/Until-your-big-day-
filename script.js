@@ -76,9 +76,9 @@ envelope.addEventListener("click", () => {
 
     envelope.style.pointerEvents = "none";
 
-    const cover = document.querySelector(".cover");
+  const flap = document.querySelector(".envelope-flap");
 
-    cover.style.transform = "rotateX(180deg)";
+flap.style.transform = "rotateX(180deg)";
 
     setTimeout(() => {
 
