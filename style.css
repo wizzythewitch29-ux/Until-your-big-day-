@@ -334,3 +334,16 @@ button:hover{
     color:#ffe8c8;
     letter-spacing:1px;
 }
+@keyframes moonGlow{
+
+    0%,100%{
+        transform:scale(1);
+        filter:brightness(1);
+    }
+
+    50%{
+        transform:scale(1.04);
+        filter:brightness(1.08);
+    }
+
+}
