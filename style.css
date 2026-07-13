@@ -106,25 +106,19 @@ button {
 
 .letter {
     display: none;
-    background: rgba(255, 240, 250, 0.95);
-    color: #5a1748;
+    background: rgba(30, 15, 45, 0.95);
+    color: #ffd6f6;
     width: 80%;
     max-width: 400px;
     margin: 30px auto;
     padding: 30px;
     border-radius: 20px;
-    line-height: 1.6;
-    box-shadow: 0 0 30px pink;
+    line-height: 1.8;
+    box-shadow: 0 0 30px #ff9de2;
+    border: 1px solid #ffb6e6;
 }
 
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+.letter h2 {
+    color: #fff0fa;
 }
+
