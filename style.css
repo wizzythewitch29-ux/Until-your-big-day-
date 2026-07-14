@@ -1276,4 +1276,532 @@ opacity:1;
 transform:translateY(0);
 
 }
+/* ===================================
+        DREAMY ROOM UPGRADE
+=================================== */
 
+.room{
+
+background:
+radial-gradient(circle at top,#5d7fd9 0%,#314d91 35%,#1a2345 100%);
+
+}
+
+/* Moonlight */
+
+.room::before{
+
+content:"";
+
+position:absolute;
+
+top:-120px;
+
+right:-120px;
+
+width:420px;
+
+height:420px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,
+rgba(255,255,220,.45),
+transparent 70%);
+
+filter:blur(15px);
+
+animation:moonLight 5s ease-in-out infinite;
+
+}
+
+/* Floating stars */
+
+.room::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px),
+
+radial-gradient(#fff8cc 1px,transparent 1px),
+
+radial-gradient(#ffffff 2px,transparent 2px);
+
+background-size:
+
+120px 120px,
+
+180px 180px,
+
+250px 250px;
+
+opacity:.35;
+
+animation:starMove 70s linear infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes moonLight{
+
+0%{
+
+opacity:.5;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.5;
+
+}
+
+}
+
+@keyframes starMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-150px);
+
+}
+
+}
+
+/* Window */
+
+.window{
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+
+to bottom,
+
+#163266,
+
+#6b95ff);
+
+}
+
+.window::before{
+
+content:"🌙";
+
+position:absolute;
+
+right:25px;
+
+top:20px;
+
+font-size:55px;
+
+animation:moonFloat 6s ease-in-out infinite;
+
+}
+
+.window::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:
+
+repeating-linear-gradient(
+
+80deg,
+
+transparent 0px,
+
+transparent 10px,
+
+rgba(255,255,255,.15) 11px,
+
+transparent 13px);
+
+animation:rain 0.45s linear infinite;
+
+}
+
+@keyframes rain{
+
+from{
+
+transform:translateY(-30px);
+
+}
+
+to{
+
+transform:translateY(30px);
+
+}
+
+}
+
+@keyframes moonFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+/* ===================================
+        COZY FURNITURE
+=================================== */
+
+/* Wooden Floor */
+
+.room{
+
+background:
+linear-gradient(to bottom,
+#233665 0%,
+#3f5fa8 60%,
+#7a573b 60%,
+#6a492f 100%);
+
+}
+
+/* Fireplace Glow */
+
+.fireplace{
+
+background:#8b5a3c;
+
+border:8px solid #6e4227;
+
+box-shadow:
+0 0 40px rgba(255,170,60,.5);
+
+}
+
+.fireplace::after{
+
+content:"";
+
+position:absolute;
+
+left:-35px;
+
+top:-35px;
+
+width:240px;
+
+height:240px;
+
+border-radius:50%;
+
+background:radial-gradient(
+rgba(255,170,70,.25),
+transparent 70%);
+
+animation:fireLight 2s infinite alternate;
+
+}
+
+@keyframes fireLight{
+
+0%{
+
+opacity:.4;
+
+}
+
+100%{
+
+opacity:1;
+
+}
+
+}
+
+/* Bookshelf */
+
+.books{
+
+background:#5d3d28;
+
+border:6px solid #3d2618;
+
+}
+
+.books::after{
+
+content:"📖 📚 📘";
+
+position:absolute;
+
+bottom:25px;
+
+left:10px;
+
+font-size:28px;
+
+}
+
+/* Rug */
+
+.rug{
+
+background:
+
+radial-gradient(circle,
+#ffd8e8,
+#f6a8c7);
+
+box-shadow:
+0 0 35px rgba(255,190,220,.35);
+
+}
+
+/* Window Glow */
+
+.window{
+
+box-shadow:
+
+0 0 40px rgba(180,220,255,.5);
+
+}
+
+/* Teddy */
+
+.teddy{
+
+font-size:78px;
+
+filter:drop-shadow(0 6px 8px rgba(0,0,0,.25));
+
+}
+
+/* Cake */
+
+.cake{
+
+font-size:72px;
+
+animation:cakeFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes cakeFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Gift */
+
+.gift{
+
+font-size:70px;
+
+animation:giftBounce 2.8s infinite;
+
+}
+
+@keyframes giftBounce{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+}
+/* ===================================
+        FIRELIES
+=================================== */
+
+.room .firefly{
+
+position:absolute;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:#fff6a8;
+
+box-shadow:0 0 12px #fff7b5;
+
+animation:fireflyGlow 2s infinite alternate;
+
+}
+
+.room .firefly:nth-child(1){
+
+top:18%;
+left:18%;
+
+animation-duration:4s;
+
+}
+
+.room .firefly:nth-child(2){
+
+top:32%;
+left:75%;
+
+animation-duration:5s;
+
+}
+
+.room .firefly:nth-child(3){
+
+top:62%;
+left:28%;
+
+animation-duration:6s;
+
+}
+
+.room .firefly:nth-child(4){
+
+top:42%;
+left:58%;
+
+animation-duration:4.5s;
+
+}
+
+.room .firefly:nth-child(5){
+
+top:76%;
+left:82%;
+
+animation-duration:5.5s;
+
+}
+
+@keyframes fireflyGlow{
+
+0%{
+
+opacity:.2;
+
+transform:translateY(0) scale(.8);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:translateY(-10px) scale(1.2);
+
+}
+
+100%{
+
+opacity:.3;
+
+transform:translateY(0) scale(.9);
+
+}
+
+}
+
+/* ===================================
+        SPEECH ANIMATION
+=================================== */
+
+.speech{
+
+animation:speechPop .6s ease;
+
+}
+
+@keyframes speechPop{
+
+0%{
+
+opacity:0;
+
+transform:translateY(20px) scale(.8);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
