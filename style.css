@@ -9,13 +9,20 @@
 }
 
 
+html{
+    scroll-behavior:smooth;
+}
+
+
 body{
 
     font-family:'Quicksand',sans-serif;
 
-    height:100vh;
+    min-height:100vh;
 
-    overflow:hidden;
+    overflow-x:hidden;
+
+    overflow-y:auto;
 
     display:flex;
 
@@ -34,6 +41,8 @@ body{
 
 
 
+
+
 /* ==========================
         STARS
 ========================== */
@@ -42,11 +51,15 @@ body{
 .stars{
 
     position:fixed;
+
     inset:0;
+
     pointer-events:none;
+
     overflow:hidden;
 
 }
+
 
 
 .stars::before{
@@ -54,14 +67,19 @@ body{
     content:"";
 
     position:absolute;
+
     inset:0;
+
 
     background-image:
     radial-gradient(white 1px,transparent 1px);
 
+
     background-size:80px 80px;
 
+
     opacity:.8;
+
 
     animation:twinkle 4s infinite alternate;
 
@@ -72,14 +90,20 @@ body{
 @keyframes twinkle{
 
     from{
+
         opacity:.35;
+
     }
 
+
     to{
+
         opacity:1;
+
     }
 
 }
+
 
 
 
@@ -96,19 +120,27 @@ body{
     position:fixed;
 
     top:45px;
+
     right:70px;
 
+
     width:140px;
+
     height:140px;
+
 
     border-radius:50%;
 
+
     background:#fff9d6;
+
 
     box-shadow:
 
     0 0 35px #fff7aa,
+
     0 0 90px rgba(255,255,220,.7);
+
 
     animation:moonGlow 5s ease-in-out infinite;
 
@@ -118,15 +150,24 @@ body{
 
 @keyframes moonGlow{
 
+
     0%,100%{
+
         transform:scale(1);
+
     }
+
 
     50%{
+
         transform:scale(1.06);
+
     }
 
+
 }
+
+
 
 
 
@@ -142,9 +183,12 @@ body{
 
     position:fixed;
 
+
     background:rgba(255,255,255,.18);
 
+
     border-radius:999px;
+
 
     filter:blur(2px);
 
@@ -158,9 +202,11 @@ body{
 
     left:-260px;
 
+
     width:220px;
 
     height:70px;
+
 
     animation:moveCloud 65s linear infinite;
 
@@ -172,11 +218,14 @@ body{
 
     top:220px;
 
+
     left:-420px;
+
 
     width:280px;
 
     height:90px;
+
 
     animation:moveCloud 90s linear infinite;
 
@@ -186,13 +235,20 @@ body{
 
 @keyframes moveCloud{
 
+
     from{
+
         transform:translateX(0);
+
     }
 
+
     to{
+
         transform:translateX(2200px);
+
     }
+
 
 }
 
@@ -209,30 +265,44 @@ body{
 
 .container{
 
+
     position:relative;
+
 
     z-index:10;
 
+
     width:90%;
+
 
     max-width:700px;
 
+
     padding:50px;
+
 
     border-radius:35px;
 
 
-    background:rgba(255,255,255,.12);
+    background:
+
+    rgba(255,255,255,.12);
+
 
     backdrop-filter:blur(18px);
 
 
-    border:1px solid rgba(255,255,255,.18);
+    border:
+
+    1px solid rgba(255,255,255,.18);
+
 
 
     box-shadow:
 
+
     0 15px 60px rgba(0,0,0,.25);
+
 
 
     text-align:center;
@@ -240,11 +310,13 @@ body{
 
     animation:fadeUp 1.2s ease;
 
+
 }
 
 
 
 @keyframes fadeUp{
+
 
     from{
 
@@ -263,6 +335,7 @@ body{
 
     }
 
+
 }
 
 
@@ -279,11 +352,15 @@ body{
 
 #title{
 
+
     font-size:3rem;
+
 
     color:#ffe8f3;
 
+
     margin-bottom:15px;
+
 
 }
 
@@ -291,13 +368,18 @@ body{
 
 h2{
 
+
     font-size:1.4rem;
+
 
     font-weight:600;
 
+
     color:#dce9ff;
 
+
     margin-bottom:30px;
+
 
 }
 
@@ -305,16 +387,20 @@ h2{
 
 .subtitle{
 
+
     margin-top:18px;
+
 
     font-size:1.05rem;
 
+
     line-height:1.8;
+
 
     color:white;
 
-}
 
+}
 
 
 
@@ -329,24 +415,31 @@ h2{
 
 #countdown{
 
+
     margin:28px 0;
+
 
     font-size:2.2rem;
 
+
     font-weight:700;
+
 
     color:#fff7b7;
 
 
+
     text-shadow:
+
 
     0 0 12px rgba(255,255,200,.6);
 
 
+
     line-height:1.4;
 
-}
 
+}
 
 
 
@@ -361,17 +454,21 @@ h2{
 
 .letterButton{
 
+
     margin-top:35px;
+
 
     font-size:65px;
 
+
     display:inline-block;
+
 
     cursor:pointer;
 
-    transition:.3s;
 
     animation:floatLetter 3s ease-in-out infinite;
+
 
 }
 
@@ -379,7 +476,9 @@ h2{
 
 .letterButton:hover{
 
+
     transform:scale(1.12);
+
 
 }
 
@@ -387,17 +486,22 @@ h2{
 
 .clickText{
 
+
     margin-top:10px;
+
 
     color:rgba(255,255,255,.75);
 
+
     font-size:.95rem;
+
 
 }
 
 
 
 @keyframes floatLetter{
+
 
     0%,100%{
 
@@ -412,8 +516,8 @@ h2{
 
     }
 
-}
 
+}
 
 
 
@@ -428,29 +532,40 @@ h2{
 
 .overlay{
 
+
     position:fixed;
 
+
     inset:0;
+
 
     background:rgba(4,8,25,.82);
 
 
+
     display:flex;
 
+
     justify-content:center;
+
 
     align-items:center;
 
 
+
     opacity:0;
 
+
     visibility:hidden;
+
 
 
     transition:.5s;
 
 
+
     z-index:999;
+
 
 }
 
@@ -458,12 +573,14 @@ h2{
 
 .overlay.show{
 
+
     opacity:1;
+
 
     visibility:visible;
 
-}
 
+}
 
 
 
@@ -478,15 +595,19 @@ h2{
 
 .letter{
 
+
     width:90%;
 
+
     max-width:700px;
+
 
 }
 
 
 
 .paper{
+
 
     background:#fffdf8;
 
@@ -499,10 +620,12 @@ h2{
 
     box-shadow:
 
+
     0 20px 60px rgba(0,0,0,.35);
 
 
     color:#444;
+
 
 }
 
@@ -510,13 +633,18 @@ h2{
 
 .paper h2{
 
+
     text-align:center;
+
 
     margin-bottom:25px;
 
+
     font-size:2rem;
 
+
     color:#6e79d8;
+
 
 }
 
@@ -524,14 +652,19 @@ h2{
 
 #typedText{
 
+
     min-height:220px;
+
 
     font-size:1.1rem;
 
+
     line-height:2;
+
 
     white-space:pre-line;
 
+
 }
 /* ==========================
       CONTINUE BUTTON
@@ -553,8 +686,8 @@ h2{
     background:linear-gradient(
     135deg,
     #ffdbe9,
-    #d8ebff);
-
+    #d8ebff
+    );
 
     font-family:'Quicksand',sans-serif;
 
@@ -566,7 +699,10 @@ h2{
 
     cursor:pointer;
 
+    transition:.3s;
+
 }
+
 
 
 #continueButton:hover{
@@ -574,9 +710,11 @@ h2{
     transform:translateY(-3px);
 
     box-shadow:
+
     0 10px 25px rgba(0,0,0,.2);
 
 }
+
 
 
 
@@ -597,6 +735,8 @@ h2{
 
     pointer-events:none;
 
+    overflow:hidden;
+
 }
 
 
@@ -608,9 +748,11 @@ h2{
 
     position:absolute;
 
+    bottom:-20px;
+
     font-size:18px;
 
-    color:white;
+    color:rgba(255,255,255,.75);
 
     animation:sparkleFloat 10s linear infinite;
 
@@ -622,8 +764,6 @@ h2{
 
     left:20%;
 
-    bottom:-20px;
-
 }
 
 
@@ -631,8 +771,6 @@ h2{
 .sparkles::after{
 
     right:18%;
-
-    bottom:-20px;
 
     animation-delay:5s;
 
@@ -642,9 +780,9 @@ h2{
 
 @keyframes sparkleFloat{
 
-    from{
+    0%{
 
-        transform:translateY(0);
+        transform:translateY(0) rotate(0deg);
 
         opacity:0;
 
@@ -658,15 +796,16 @@ h2{
     }
 
 
-    to{
+    100%{
 
-        transform:translateY(-110vh);
+        transform:translateY(-110vh) rotate(360deg);
 
         opacity:0;
 
     }
 
 }
+
 
 
 
@@ -688,9 +827,11 @@ body::after{
 
     bottom:-30px;
 
+    font-size:20px;
+
     color:rgba(255,190,220,.45);
 
-    font-size:20px;
+    pointer-events:none;
 
     animation:heartFloat 14s linear infinite;
 
@@ -718,22 +859,31 @@ body::after{
 
 @keyframes heartFloat{
 
-    from{
 
-        transform:translateY(0);
+    0%{
+
+        transform:translateY(0) scale(.8);
 
         opacity:0;
 
     }
 
 
-    to{
+    15%{
+
+        opacity:1;
+
+    }
+
+
+    100%{
 
         transform:translateY(-110vh) scale(1.4);
 
         opacity:0;
 
     }
+
 
 }
 
@@ -745,7 +895,7 @@ body::after{
 
 
 /* ==========================
-          COZY ROOM
+          ROOM
 ========================== */
 
 
@@ -757,9 +907,11 @@ body::after{
 
     display:none;
 
+
     justify-content:center;
 
     align-items:center;
+
 
     overflow:hidden;
 
@@ -767,10 +919,16 @@ body::after{
     background:
 
     linear-gradient(
+
     to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
+
+    #1a2345,
+
+    #314d91,
+
+    #7a573b
+
+    );
 
 
     z-index:2000;
@@ -791,6 +949,7 @@ body::after{
 
 @keyframes fadeRoom{
 
+
     from{
 
         opacity:0;
@@ -808,7 +967,9 @@ body::after{
 
     }
 
+
 }
+
 
 
 
@@ -825,13 +986,18 @@ body::after{
 
     position:absolute;
 
+
     top:70px;
+
 
     right:120px;
 
+
     width:230px;
 
+
     height:260px;
+
 
 
     border-radius:18px;
@@ -840,34 +1006,44 @@ body::after{
     background:
 
     linear-gradient(
+
     to bottom,
+
     #203868,
-    #7ea8ff);
+
+    #7ea8ff
+
+    );
 
 
     border:10px solid #7b5538;
 
 
     box-shadow:
-    0 0 40px rgba(255,255,255,.15);
+
+    0 0 40px rgba(255,255,255,.3);
 
 }
 
 
 
-
-
 .window::before{
+
 
     content:"🌙";
 
+
     position:absolute;
+
 
     right:25px;
 
+
     top:20px;
 
+
     font-size:55px;
+
 
 }
 
@@ -885,25 +1061,34 @@ body::after{
 
 .fireplace{
 
+
     position:absolute;
 
+
     bottom:60px;
+
 
     left:120px;
 
 
     width:170px;
 
+
     height:170px;
 
 
     background:#9b6640;
 
+
     border-radius:20px;
 
 
+    border:8px solid #6e4227;
+
+
     box-shadow:
-    0 0 40px rgba(255,180,100,.5);
+
+    0 0 40px rgba(255,170,60,.5);
 
 }
 
@@ -911,15 +1096,21 @@ body::after{
 
 .fireplace::before{
 
+
     content:"🔥";
+
 
     position:absolute;
 
+
     bottom:20px;
+
 
     left:35px;
 
+
     font-size:70px;
+
 
 }
 
@@ -937,12 +1128,15 @@ body::after{
 
 .rug{
 
+
     position:absolute;
+
 
     bottom:40px;
 
 
     width:420px;
+
 
     height:140px;
 
@@ -950,7 +1144,20 @@ body::after{
     border-radius:100px;
 
 
-    background:#f4c2d7;
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    #ffd8e8,
+
+    #f6a8c7
+
+    );
+
+
+    opacity:.9;
 
 }
 
@@ -960,16 +1167,119 @@ body::after{
 
 
 
+
 /* ==========================
-          OBJECTS
+        BOOKSHELF
+========================== */
+
+
+.books{
+
+
+    position:absolute;
+
+
+    left:70px;
+
+
+    top:120px;
+
+
+    width:140px;
+
+
+    height:220px;
+
+
+    background:#5d3d28;
+
+
+    border:6px solid #3d2618;
+
+
+    border-radius:12px;
+
+}
+
+
+
+.books::before{
+
+
+    content:"📚";
+
+
+    position:absolute;
+
+
+    font-size:70px;
+
+
+    left:25px;
+
+
+    top:40px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          PLANT
+========================== */
+
+
+.plant{
+
+
+    position:absolute;
+
+
+    right:90px;
+
+
+    bottom:70px;
+
+}
+
+
+
+.plant::before{
+
+
+    content:"🪴";
+
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        TEDDY
 ========================== */
 
 
 .teddy{
 
+
     position:absolute;
 
+
     bottom:120px;
+
 
     left:50%;
 
@@ -979,10 +1289,11 @@ body::after{
 
     font-size:78px;
 
+
     cursor:pointer;
 
 
-    animation:teddyBounce 2.5s infinite;
+    animation:teddyBounce 2.5s infinite ease-in-out;
 
 }
 
@@ -990,52 +1301,23 @@ body::after{
 
 @keyframes teddyBounce{
 
-    50%{
 
-        transform:
-        translateX(-50%)
-        translateY(-8px);
+    0%,100%{
+
+        transform:translateX(-50%) translateY(0);
 
     }
 
-}
 
+    50%{
 
+        transform:translateX(-50%) translateY(-8px);
 
+    }
 
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
 
 }
 
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
 
 
 
@@ -1044,7 +1326,53 @@ body::after{
 
 
 /* ==========================
-        CHARACTER
+        CAKE + GIFT
+========================== */
+
+
+.cake{
+
+
+    position:absolute;
+
+
+    left:300px;
+
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+.gift{
+
+
+    position:absolute;
+
+
+    right:220px;
+
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+
+    cursor:pointer;
+
+
+}
+/* ==========================
+        YOUR CHARACTER
 ========================== */
 
 
@@ -1056,13 +1384,17 @@ body::after{
 
     bottom:90px;
 
-
     width:90px;
 
     height:180px;
 
+    display:flex;
 
-    animation:idle 3s infinite;
+    flex-direction:column;
+
+    align-items:center;
+
+    animation:idle 3s ease-in-out infinite;
 
 }
 
@@ -1074,10 +1406,55 @@ body::after{
 
     height:58px;
 
-
     background:#ffe8d9;
 
     border-radius:50%;
+
+    position:relative;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.2);
+
+}
+
+
+
+.head::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-8px;
+
+    left:-3px;
+
+    width:64px;
+
+    height:35px;
+
+    background:#4a2c22;
+
+    border-radius:40px 40px 20px 20px;
+
+}
+
+
+
+.head::after{
+
+    content:"•   •";
+
+    position:absolute;
+
+    left:13px;
+
+    top:20px;
+
+    font-size:15px;
+
+    color:#333;
+
+    letter-spacing:8px;
 
 }
 
@@ -1087,14 +1464,14 @@ body::after{
 
     margin-top:-5px;
 
-
     width:68px;
 
     height:100px;
 
-
-    background:#dce9ff;
-
+    background:linear-gradient(
+    to bottom,
+    #dce9ff,
+    #b9cfff);
 
     border-radius:22px;
 
@@ -1103,6 +1480,13 @@ body::after{
 
 
 @keyframes idle{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
 
     50%{
 
@@ -1120,7 +1504,7 @@ body::after{
 
 
 /* ==========================
-        SPEECH
+        SPEECH BUBBLE
 ========================== */
 
 
@@ -1128,7 +1512,9 @@ body::after{
 
     position:absolute;
 
+
     right:410px;
+
 
     bottom:290px;
 
@@ -1136,805 +1522,33 @@ body::after{
     background:white;
 
 
+    color:#444;
+
+
     padding:14px 20px;
+
 
     border-radius:18px;
 
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
-
-
-    background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
-
-
-    border-radius:8px;
-
-
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
-
-}
-
-
-
-.knob{
-
-    position:absolute;
-
-
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-
-/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
 
     font-weight:700;
 
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
 
     font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        HEARTS
-========================== */
-
-
-body::before,
-body::after{
-
-    content:"❤";
-
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          COZY ROOM
-========================== */
-
-
-.room{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
-
-    position:absolute;
-
-    top:70px;
-
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
-
-    width:420px;
-
-    height:140px;
-
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
-
-    border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
 
 
     opacity:0;
 
 
+    transform:translateY(10px);
+
+
     transition:.6s;
+
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.18);
 
 }
 
@@ -1944,6 +1558,8 @@ body::after{
 
     opacity:1;
 
+    transform:translateY(0);
+
 }
 
 
@@ -1954,7 +1570,7 @@ body::after{
 
 
 /* ==========================
-            DOOR
+        DOOR
 ========================== */
 
 
@@ -1962,7 +1578,9 @@ body::after{
 
     display:none;
 
+
     justify-content:center;
+
 
     align-items:center;
 
@@ -1973,6 +1591,7 @@ body::after{
 .doorFrame{
 
     width:180px;
+
 
     height:300px;
 
@@ -1986,6 +1605,11 @@ body::after{
     border-radius:10px;
 
 
+    box-shadow:
+
+    0 0 30px rgba(0,0,0,.35);
+
+
     perspective:1000px;
 
 }
@@ -1994,24 +1618,34 @@ body::after{
 
 .door{
 
+
     width:100%;
+
 
     height:100%;
 
 
     background:
+
     linear-gradient(
+
     #9b6d43,
-    #7a4f2b);
+
+    #7a4f2b
+
+    );
 
 
     border-radius:8px;
 
 
+    position:relative;
+
+
     transform-origin:left center;
 
 
-    transition:1.5s;
+    transition:1.5s ease;
 
 
     cursor:pointer;
@@ -2022,8 +1656,11 @@ body::after{
 
 .door.open{
 
+
     transform:
+
     perspective(900px)
+
     rotateY(-105deg);
 
 }
@@ -2032,15 +1669,18 @@ body::after{
 
 .knob{
 
+
     position:absolute;
 
 
     right:18px;
 
+
     top:50%;
 
 
     width:12px;
+
 
     height:12px;
 
@@ -2051,269 +1691,9 @@ body::after{
     background:#ffd66b;
 
 
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-
-/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
     box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
 
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        HEARTS
-========================== */
-
-
-body::before,
-body::after{
-
-    content:"❤";
-
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
+    0 0 10px gold;
 
 }
 
@@ -2325,523 +1705,64 @@ body::after{
 
 
 /* ==========================
-          COZY ROOM
+        EXTRA GLOW
 ========================== */
 
 
-.room{
+.room::before{
 
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
+    content:"";
 
     position:absolute;
 
-    top:70px;
+    top:-120px;
 
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
+    right:-120px;
 
     width:420px;
 
-    height:140px;
+    height:420px;
 
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
 
     border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
 
 
     background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,255,220,.45),
+
+    transparent 70%
+
+    );
 
 
-    border-radius:8px;
+    filter:blur(15px);
 
 
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
+    animation:moonLight 5s ease-in-out infinite;
 
 }
 
 
 
-.knob{
+@keyframes moonLight{
 
-    position:absolute;
+    0%,100%{
 
+        opacity:.5;
 
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
+    }
 
 
-    border-radius:50%;
+    50%{
 
+        opacity:1;
 
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
+    }
 
 }
 
@@ -2853,185 +1774,134 @@ body::after{
 
 
 /* ==========================
-        MOBILE
+        MOBILE FIX
 ========================== */
 
 
 @media(max-width:768px){
 
 
-.container{
+    .container{
 
-    padding:30px;
+        width:92%;
 
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
+        padding:30px;
 
     }
 
 
-    20%{
 
-        opacity:1;
+    #title{
+
+        font-size:2.2rem;
 
     }
 
 
-    to{
 
-        transform:translateY(-110vh);
+    h2{
 
-        opacity:0;
+        font-size:1.1rem;
+
+    }
+
+
+
+    #countdown{
+
+        font-size:1.7rem;
+
+    }
+
+
+
+    .moon{
+
+        width:100px;
+
+        height:100px;
+
+        top:25px;
+
+        right:25px;
+
+    }
+
+
+
+    .window{
+
+        width:140px;
+
+        height:170px;
+
+        right:20px;
+
+        top:40px;
+
+    }
+
+
+
+    .fireplace{
+
+        left:20px;
+
+        bottom:40px;
+
+        width:120px;
+
+        height:120px;
+
+    }
+
+
+
+    .teddy{
+
+        font-size:55px;
+
+    }
+
+
+
+    .gift{
+
+        right:40px;
+
+        font-size:50px;
+
+    }
+
+
+
+    .cake{
+
+        left:40px;
+
+        font-size:50px;
+
+    }
+
+
+
+    .you{
+
+        right:120px;
+
+        bottom:80px;
+
+    }
+
+
+
+    .speech{
+
+        right:30px;
+
+        bottom:250px;
+
+        font-size:14px;
 
     }
 
@@ -3044,4608 +1914,26 @@ body::after{
 
 
 /* ==========================
-        HEARTS
+        BUTTON SMOOTH
 ========================== */
 
 
-body::before,
-body::after{
+button{
 
-    content:"❤";
+    transition:.3s;
 
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          COZY ROOM
-========================== */
-
-
-.room{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
-
-    position:absolute;
-
-    top:70px;
-
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
-
-    width:420px;
-
-    height:140px;
-
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
-
-    border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
-
-
-    background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
-
-
-    border-radius:8px;
-
-
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
-
-}
-
-
-
-.knob{
-
-    position:absolute;
-
-
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-
-/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        HEARTS
-========================== */
-
-
-body::before,
-body::after{
-
-    content:"❤";
-
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          COZY ROOM
-========================== */
-
-
-.room{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
-
-    position:absolute;
-
-    top:70px;
-
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
-
-    width:420px;
-
-    height:140px;
-
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
-
-    border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
-
-
-    background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
-
-
-    border-radius:8px;
-
-
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
-
-}
-
-
-
-.knob{
-
-    position:absolute;
-
-
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-
-
-}/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        HEARTS
-========================== */
-
-
-body::before,
-body::after{
-
-    content:"❤";
-
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          COZY ROOM
-========================== */
-
-
-.room{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
-
-    position:absolute;
-
-    top:70px;
-
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
-
-    width:420px;
-
-    height:140px;
-
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
-
-    border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
-
-
-    background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
-
-
-    border-radius:8px;
-
-
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
-
-}
-
-
-
-.knob{
-
-    position:absolute;
-
-
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-
-
-}/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        HEARTS
-========================== */
-
-
-body::before,
-body::after{
-
-    content:"❤";
-
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          COZY ROOM
-========================== */
-
-
-.room{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
-
-    position:absolute;
-
-    top:70px;
-
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
-
-    width:420px;
-
-    height:140px;
-
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
-
-    border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
-
-
-    background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
-
-
-    border-radius:8px;
-
-
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
-
-}
-
-
-
-.knob{
-
-    position:absolute;
-
-
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-
-
-}/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        HEARTS
-========================== */
-
-
-body::before,
-body::after{
-
-    content:"❤";
-
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          COZY ROOM
-========================== */
-
-
-.room{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
-
-    position:absolute;
-
-    top:70px;
-
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
-
-    width:420px;
-
-    height:140px;
-
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
-
-    border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
-
-
-    background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
-
-
-    border-radius:8px;
-
-
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
-
-}
-
-
-
-.knob{
-
-    position:absolute;
-
-
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
-}
-
-
-
-.fireplace{
-
-    left:20px;
-
-    width:120px;
-
-    height:120px;
-
-}
-
-
-.teddy{
-
-    font-size:55px;
-
-}
-
-/* ==========================
-      CONTINUE BUTTON
-========================== */
-
-
-#continueButton{
-
-    display:none;
-
-    margin:35px auto 0;
-
-    padding:15px 40px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:linear-gradient(
-    135deg,
-    #ffdbe9,
-    #d8ebff);
-
-
-    font-family:'Quicksand',sans-serif;
-
-    font-size:1rem;
-
-    font-weight:700;
-
-    color:#35529a;
-
-    cursor:pointer;
-
-}
-
-
-#continueButton:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.2);
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        SPARKLES
-========================== */
-
-
-.sparkles{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-
-
-.sparkles::before,
-.sparkles::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    font-size:18px;
-
-    color:white;
-
-    animation:sparkleFloat 10s linear infinite;
-
-}
-
-
-
-.sparkles::before{
-
-    left:20%;
-
-    bottom:-20px;
-
-}
-
-
-
-.sparkles::after{
-
-    right:18%;
-
-    bottom:-20px;
-
-    animation-delay:5s;
-
-}
-
-
-
-@keyframes sparkleFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    20%{
-
-        opacity:1;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        HEARTS
-========================== */
-
-
-body::before,
-body::after{
-
-    content:"❤";
-
-    position:fixed;
-
-    bottom:-30px;
-
-    color:rgba(255,190,220,.45);
-
-    font-size:20px;
-
-    animation:heartFloat 14s linear infinite;
-
-}
-
-
-
-body::before{
-
-    left:12%;
-
-}
-
-
-
-body::after{
-
-    right:14%;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes heartFloat{
-
-    from{
-
-        transform:translateY(0);
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        transform:translateY(-110vh) scale(1.4);
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          COZY ROOM
-========================== */
-
-
-.room{
-
-    position:fixed;
-
-    inset:0;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    overflow:hidden;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #1d274d,
-    #4b5fa6,
-    #9cc8ff);
-
-
-    z-index:2000;
-
-}
-
-
-
-.room.show{
-
-    display:flex;
-
-    animation:fadeRoom 1.2s ease;
-
-}
-
-
-
-@keyframes fadeRoom{
-
-    from{
-
-        opacity:0;
-
-        transform:scale(1.05);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          WINDOW
-========================== */
-
-
-.window{
-
-    position:absolute;
-
-    top:70px;
-
-    right:120px;
-
-    width:230px;
-
-    height:260px;
-
-
-    border-radius:18px;
-
-
-    background:
-
-    linear-gradient(
-    to bottom,
-    #203868,
-    #7ea8ff);
-
-
-    border:10px solid #7b5538;
-
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-.window::before{
-
-    content:"🌙";
-
-    position:absolute;
-
-    right:25px;
-
-    top:20px;
-
-    font-size:55px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        FIREPLACE
-========================== */
-
-
-.fireplace{
-
-    position:absolute;
-
-    bottom:60px;
-
-    left:120px;
-
-
-    width:170px;
-
-    height:170px;
-
-
-    background:#9b6640;
-
-    border-radius:20px;
-
-
-    box-shadow:
-    0 0 40px rgba(255,180,100,.5);
-
-}
-
-
-
-.fireplace::before{
-
-    content:"🔥";
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:35px;
-
-    font-size:70px;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-          RUG
-========================== */
-
-
-.rug{
-
-    position:absolute;
-
-    bottom:40px;
-
-
-    width:420px;
-
-    height:140px;
-
-
-    border-radius:100px;
-
-
-    background:#f4c2d7;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-          OBJECTS
-========================== */
-
-
-.teddy{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    font-size:78px;
-
-    cursor:pointer;
-
-
-    animation:teddyBounce 2.5s infinite;
-
-}
-
-
-
-@keyframes teddyBounce{
-
-    50%{
-
-        transform:
-        translateX(-50%)
-        translateY(-8px);
-
-    }
-
-}
-
-
-
-
-
-
-.cake{
-
-    position:absolute;
-
-    left:300px;
-
-    bottom:85px;
-
-
-    font-size:72px;
-
-    cursor:pointer;
-
-}
-
-
-
-.gift{
-
-    position:absolute;
-
-    right:220px;
-
-    bottom:85px;
-
-
-    font-size:70px;
-
-    cursor:pointer;
-
-}
-
-
-
-
-
-
-
-/* ==========================
-        CHARACTER
-========================== */
-
-
-.you{
-
-    position:absolute;
-
-    right:320px;
-
-    bottom:90px;
-
-
-    width:90px;
-
-    height:180px;
-
-
-    animation:idle 3s infinite;
-
-}
-
-
-
-.head{
-
-    width:58px;
-
-    height:58px;
-
-
-    background:#ffe8d9;
-
-    border-radius:50%;
-
-}
-
-
-
-.body{
-
-    margin-top:-5px;
-
-
-    width:68px;
-
-    height:100px;
-
-
-    background:#dce9ff;
-
-
-    border-radius:22px;
-
-}
-
-
-
-@keyframes idle{
-
-    50%{
-
-        transform:translateY(-6px);
-
-    }
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        SPEECH
-========================== */
-
-
-.speech{
-
-    position:absolute;
-
-    right:410px;
-
-    bottom:290px;
-
-
-    background:white;
-
-
-    padding:14px 20px;
-
-    border-radius:18px;
-
-
-    opacity:0;
-
-
-    transition:.6s;
-
-}
-
-
-
-.speech.show{
-
-    opacity:1;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-            DOOR
-========================== */
-
-
-.doorScene{
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.doorFrame{
-
-    width:180px;
-
-    height:300px;
-
-
-    padding:10px;
-
-
-    background:#5d3b22;
-
-
-    border-radius:10px;
-
-
-    perspective:1000px;
-
-}
-
-
-
-.door{
-
-    width:100%;
-
-    height:100%;
-
-
-    background:
-    linear-gradient(
-    #9b6d43,
-    #7a4f2b);
-
-
-    border-radius:8px;
-
-
-    transform-origin:left center;
-
-
-    transition:1.5s;
-
-
-    cursor:pointer;
-
-}
-
-
-
-.door.open{
-
-    transform:
-    perspective(900px)
-    rotateY(-105deg);
-
-}
-
-
-
-.knob{
-
-    position:absolute;
-
-
-    right:18px;
-
-    top:50%;
-
-
-    width:12px;
-
-    height:12px;
-
-
-    border-radius:50%;
-
-
-    background:#ffd66b;
-
-
-    box-shadow:0 0 10px gold;
-
-}
-
-
-
-
-
-
-
-
-/* ==========================
-        MOBILE
-========================== */
-
-
-@media(max-width:768px){
-
-
-.container{
-
-    padding:30px;
-
-}
-
-
-#title{
-
-    font-size:2.2rem;
-
-}
-
-
-.window{
-
-    width:140px;
-
-    height:170px;
-
-    right:20px;
-
 }
-
-
-
-.fireplace{
 
-    left:20px;
 
-    width:120px;
+button:hover{
 
-    height:120px;
+    transform:scale(1.05);
 
 }
 
 
-.teddy{
+button:active{
 
-    font-size:55px;
+    transform:scale(.96);
 
 }
-
-
-}
-
-
