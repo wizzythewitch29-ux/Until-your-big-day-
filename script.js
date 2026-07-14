@@ -93,12 +93,15 @@ setTimeout(() => {
 // ===============================
 // CONTINUE
 // ===============================
-
 continueBtn.addEventListener("click", () => {
 
-    alert("Chapter One coming soon... 💙");
+    letterPage.classList.add("hidden");
+
+    libraryPage.classList.remove("hidden");
 
 });
+
+
 
 // ===============================
 // BIRTHDAY MUSIC
