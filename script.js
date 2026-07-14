@@ -98,6 +98,7 @@ openLetter.addEventListener("click", () => {
 /* ==========================
       TYPE ANIMATION
 ========================== */
+let index = 0;
 function typeLetter() {
 
     index = 0;
@@ -221,6 +222,8 @@ cake.addEventListener("click",()=>{
     speech.classList.add("show");
 
 });
+const room = document.getElementById("room");
+const speech = document.getElementById("speech");
 const door = document.getElementById("door");
 
 door.addEventListener("click", () => {
@@ -229,22 +232,18 @@ door.addEventListener("click", () => {
 
     setTimeout(() => {
 
-        // Hide overlay
         overlay.classList.remove("show");
 
-        // Hide first page
         document.querySelector(".container").style.display = "none";
 
-        // Show room
         room.classList.add("show");
 
-        // Show speech bubble
         setTimeout(() => {
 
             speech.classList.add("show");
 
-        },1200);
+        }, 1200);
 
-    },1500);
+    }, 1500);
 
 });
