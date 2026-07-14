@@ -205,3 +205,29 @@ window.addEventListener("load",()=>{
 // ======================================
 // END
 // ======================================
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = false;
+
+musicBtn.addEventListener("click", () => {
+
+    if(!playing){
+
+        music.play();
+
+        playing = true;
+
+        musicBtn.innerHTML = "⏸️";
+
+    }else{
+
+        music.pause();
+
+        playing = false;
+
+        musicBtn.innerHTML = "🎵";
+
+    }
+
+});
