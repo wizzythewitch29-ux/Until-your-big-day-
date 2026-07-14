@@ -106,16 +106,8 @@ continueBtn.addEventListener("click", () => {
 // ===============================
 // BIRTHDAY MUSIC
 // ===============================
+const music = document.getElementById("bgMusic");
 
-const music = new Audio("music.mp3");
-
-music.loop = true;
-
-function playBirthdayMusic() {
-
-    music.play().catch(() => {});
-
-}
 // ======================================
 // FUTURE CHAPTER SYSTEM (READY TO EXPAND)
 // ======================================
