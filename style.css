@@ -1,5 +1,5 @@
 /* ==========================
-   RESET
+        RESET
 ========================== */
 
 *{
@@ -7,6 +7,7 @@
     padding:0;
     box-sizing:border-box;
 }
+
 
 body{
 
@@ -31,1855 +32,7620 @@ body{
 
 }
 
+
+
 /* ==========================
-      STARS
+        STARS
 ========================== */
+
 
 .stars{
 
-position:fixed;
-
-inset:0;
-
-pointer-events:none;
-
-overflow:hidden;
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
 
 }
+
 
 .stars::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
+    inset:0;
 
-inset:0;
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
 
-background-image:
-radial-gradient(white 1px,transparent 1px);
+    background-size:80px 80px;
 
-background-size:80px 80px;
+    opacity:.8;
 
-opacity:.8;
-
-animation:twinkle 4s infinite alternate;
+    animation:twinkle 4s infinite alternate;
 
 }
+
+
 
 @keyframes twinkle{
 
-0%{
+    from{
+        opacity:.35;
+    }
 
-opacity:.35;
-
-}
-
-100%{
-
-opacity:1;
+    to{
+        opacity:1;
+    }
 
 }
 
-}
+
+
+
+
 
 /* ==========================
-        MOON
+          MOON
 ========================== */
+
 
 .moon{
 
-position:fixed;
+    position:fixed;
 
-top:45px;
+    top:45px;
+    right:70px;
 
-right:70px;
+    width:140px;
+    height:140px;
 
-width:140px;
+    border-radius:50%;
 
-height:140px;
+    background:#fff9d6;
 
-border-radius:50%;
+    box-shadow:
 
-background:#fff9d6;
+    0 0 35px #fff7aa,
+    0 0 90px rgba(255,255,220,.7);
 
-box-shadow:
-
-0 0 35px #fff7aa,
-
-0 0 90px rgba(255,255,220,.7);
-
-animation:moonGlow 5s ease-in-out infinite;
+    animation:moonGlow 5s ease-in-out infinite;
 
 }
+
+
 
 @keyframes moonGlow{
 
-0%{
+    0%,100%{
+        transform:scale(1);
+    }
 
-transform:scale(1);
-
-}
-
-50%{
-
-transform:scale(1.06);
+    50%{
+        transform:scale(1.06);
+    }
 
 }
 
-100%{
 
-transform:scale(1);
 
-}
 
-}
+
 
 /* ==========================
-       CLOUDS
+          CLOUDS
 ========================== */
+
 
 .cloud{
 
-position:fixed;
+    position:fixed;
 
-background:rgba(255,255,255,.18);
+    background:rgba(255,255,255,.18);
 
-border-radius:999px;
+    border-radius:999px;
 
-filter:blur(2px);
+    filter:blur(2px);
 
 }
+
+
 
 .cloud1{
 
-top:110px;
+    top:110px;
 
-left:-260px;
+    left:-260px;
 
-width:220px;
+    width:220px;
 
-height:70px;
+    height:70px;
 
-animation:moveCloud 65s linear infinite;
+    animation:moveCloud 65s linear infinite;
 
 }
+
+
 
 .cloud2{
 
-top:220px;
+    top:220px;
 
-left:-420px;
+    left:-420px;
 
-width:280px;
+    width:280px;
 
-height:90px;
+    height:90px;
 
-animation:moveCloud 90s linear infinite;
+    animation:moveCloud 90s linear infinite;
 
 }
+
+
 
 @keyframes moveCloud{
 
-from{
+    from{
+        transform:translateX(0);
+    }
 
-transform:translateX(0);
-
-}
-
-to{
-
-transform:translateX(2200px);
+    to{
+        transform:translateX(2200px);
+    }
 
 }
 
-}
+
+
+
+
+
+
 /* ==========================
-      MAIN CONTAINER
+        MAIN CARD
 ========================== */
+
 
 .container{
 
-position:relative;
+    position:relative;
 
-z-index:10;
+    z-index:10;
 
-width:90%;
+    width:90%;
 
-max-width:700px;
+    max-width:700px;
 
-padding:50px;
+    padding:50px;
 
-border-radius:35px;
+    border-radius:35px;
 
-background:rgba(255,255,255,.12);
 
-backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.12);
 
-border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
 
-box-shadow:
 
-0 15px 60px rgba(0,0,0,.25);
+    border:1px solid rgba(255,255,255,.18);
 
-text-align:center;
 
-animation:fadeUp 1.2s ease;
+    box-shadow:
+
+    0 15px 60px rgba(0,0,0,.25);
+
+
+    text-align:center;
+
+
+    animation:fadeUp 1.2s ease;
 
 }
+
+
 
 @keyframes fadeUp{
 
-from{
+    from{
 
-opacity:0;
+        opacity:0;
 
-transform:translateY(35px);
+        transform:translateY(35px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
 
 }
 
-to{
 
-opacity:1;
 
-transform:translateY(0);
 
-}
 
-}
+
+
 
 /* ==========================
-         TEXT
+          TEXT
 ========================== */
+
 
 #title{
 
-font-size:3rem;
+    font-size:3rem;
 
-color:#ffe8f3;
+    color:#ffe8f3;
 
-margin-bottom:15px;
+    margin-bottom:15px;
 
 }
+
+
 
 h2{
 
-font-size:1.4rem;
+    font-size:1.4rem;
 
-font-weight:600;
+    font-weight:600;
 
-color:#dce9ff;
+    color:#dce9ff;
 
-margin-bottom:30px;
+    margin-bottom:30px;
 
 }
+
+
 
 .subtitle{
 
-margin-top:18px;
+    margin-top:18px;
 
-font-size:1.05rem;
+    font-size:1.05rem;
 
-line-height:1.8;
+    line-height:1.8;
 
-color:white;
+    color:white;
 
 }
 
+
+
+
+
+
+
+
 /* ==========================
-      COUNTDOWN
+        COUNTDOWN
 ========================== */
+
 
 #countdown{
 
-margin:28px 0;
+    margin:28px 0;
 
-font-size:2.2rem;
+    font-size:2.2rem;
 
-font-weight:700;
+    font-weight:700;
 
-color:#fff7b7;
+    color:#fff7b7;
 
-text-shadow:
 
-0 0 12px rgba(255,255,200,.6);
+    text-shadow:
 
-line-height:1.4;
+    0 0 12px rgba(255,255,200,.6);
+
+
+    line-height:1.4;
 
 }
 
+
+
+
+
+
+
+
 /* ==========================
-      LETTER
+        LETTER ICON
 ========================== */
+
 
 .letterButton{
 
-margin-top:35px;
+    margin-top:35px;
 
-font-size:65px;
+    font-size:65px;
 
-display:inline-block;
+    display:inline-block;
 
-cursor:pointer;
+    cursor:pointer;
 
-transition:.3s;
+    transition:.3s;
 
-animation:floatLetter 3s ease-in-out infinite;
+    animation:floatLetter 3s ease-in-out infinite;
 
 }
+
+
 
 .letterButton:hover{
 
-transform:scale(1.12);
+    transform:scale(1.12);
 
 }
+
+
 
 .clickText{
 
-margin-top:10px;
+    margin-top:10px;
 
-color:rgba(255,255,255,.75);
+    color:rgba(255,255,255,.75);
 
-font-size:.95rem;
+    font-size:.95rem;
 
 }
+
+
 
 @keyframes floatLetter{
 
-0%{
+    0%,100%{
 
-transform:translateY(0);
+        transform:translateY(0);
 
-}
+    }
 
-50%{
 
-transform:translateY(-10px);
+    50%{
 
-}
+        transform:translateY(-10px);
 
-100%{
-
-transform:translateY(0);
+    }
 
 }
 
-}
+
+
+
+
+
+
+
 /* ==========================
-      LETTER OVERLAY
+        OVERLAY
 ========================== */
+
 
 .overlay{
 
-position:fixed;
+    position:fixed;
 
-top:0;
-left:0;
+    inset:0;
 
-width:100%;
-height:100%;
+    background:rgba(4,8,25,.82);
 
-background:rgba(4,8,25,.82);
 
-display:flex;
+    display:flex;
 
-justify-content:center;
-align-items:center;
+    justify-content:center;
 
-opacity:0;
-visibility:hidden;
+    align-items:center;
 
-transition:.5s;
 
-z-index:999;
+    opacity:0;
+
+    visibility:hidden;
+
+
+    transition:.5s;
+
+
+    z-index:999;
 
 }
+
+
 
 .overlay.show{
 
-opacity:1;
-visibility:visible;
+    opacity:1;
+
+    visibility:visible;
 
 }
 
+
+
+
+
+
+
+
 /* ==========================
-        LETTER
+        LETTER PAPER
 ========================== */
+
 
 .letter{
 
-width:90%;
-max-width:700px;
+    width:90%;
 
-animation:letterAppear .7s ease;
+    max-width:700px;
 
 }
+
+
 
 .paper{
 
-background:#fffdf8;
+    background:#fffdf8;
 
-padding:45px;
 
-border-radius:25px;
+    padding:45px;
 
-box-shadow:
-0 20px 60px rgba(0,0,0,.35);
 
-color:#444;
+    border-radius:25px;
 
-}
 
-@keyframes letterAppear{
+    box-shadow:
 
-from{
+    0 20px 60px rgba(0,0,0,.35);
 
-transform:translateY(40px) scale(.9);
 
-opacity:0;
+    color:#444;
 
 }
 
-to{
 
-transform:translateY(0) scale(1);
-
-opacity:1;
-
-}
-
-}
 
 .paper h2{
 
-text-align:center;
+    text-align:center;
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
-font-size:2rem;
+    font-size:2rem;
 
-color:#6e79d8;
+    color:#6e79d8;
 
 }
+
+
 
 #typedText{
 
-min-height:220px;
+    min-height:220px;
 
-font-size:1.1rem;
+    font-size:1.1rem;
 
-line-height:2;
+    line-height:2;
 
-white-space:pre-line;
+    white-space:pre-line;
 
 }
-
 /* ==========================
-     CONTINUE BUTTON
+      CONTINUE BUTTON
 ========================== */
+
 
 #continueButton{
 
-display:none;
+    display:none;
 
-margin:35px auto 0;
+    margin:35px auto 0;
 
-padding:15px 40px;
+    padding:15px 40px;
 
-border:none;
+    border:none;
 
-border-radius:999px;
+    border-radius:999px;
 
-background:linear-gradient(
-135deg,
-#ffdbe9,
-#d8ebff);
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
 
-font-family:'Quicksand',sans-serif;
 
-font-size:1rem;
+    font-family:'Quicksand',sans-serif;
 
-font-weight:700;
+    font-size:1rem;
 
-color:#35529a;
+    font-weight:700;
 
-cursor:pointer;
+    color:#35529a;
 
-transition:.3s;
+    cursor:pointer;
 
 }
+
 
 #continueButton:hover{
 
-transform:translateY(-3px);
+    transform:translateY(-3px);
 
-box-shadow:
-
-0 10px 25px rgba(0,0,0,.2);
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
 
 }
+
+
+
+
+
+
+
 /* ==========================
         SPARKLES
 ========================== */
 
+
 .sparkles{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-pointer-events:none;
-
-overflow:hidden;
+    pointer-events:none;
 
 }
+
+
 
 .sparkles::before,
 .sparkles::after{
 
-content:"✦";
+    content:"✦";
 
-position:absolute;
+    position:absolute;
 
-font-size:18px;
+    font-size:18px;
 
-color:rgba(255,255,255,.75);
+    color:white;
 
-animation:sparkleFloat 10s linear infinite;
+    animation:sparkleFloat 10s linear infinite;
 
 }
+
+
 
 .sparkles::before{
 
-left:20%;
+    left:20%;
 
-bottom:-20px;
-
-animation-delay:0s;
+    bottom:-20px;
 
 }
+
+
 
 .sparkles::after{
 
-right:18%;
+    right:18%;
 
-bottom:-20px;
+    bottom:-20px;
 
-animation-delay:5s;
+    animation-delay:5s;
 
 }
+
+
 
 @keyframes sparkleFloat{
 
-0%{
+    from{
 
-transform:translateY(0) rotate(0deg);
+        transform:translateY(0);
 
-opacity:0;
+        opacity:0;
 
-}
+    }
 
-20%{
 
-opacity:1;
+    20%{
 
-}
+        opacity:1;
 
-80%{
+    }
 
-opacity:.8;
 
-}
+    to{
 
-100%{
+        transform:translateY(-110vh);
 
-transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
 
-opacity:0;
+    }
 
 }
 
-}
+
+
+
+
+
 
 /* ==========================
         HEARTS
 ========================== */
 
+
 body::before,
 body::after{
 
-content:"❤";
+    content:"❤";
 
-position:fixed;
+    position:fixed;
 
-font-size:20px;
+    bottom:-30px;
 
-color:rgba(255,190,220,.45);
+    color:rgba(255,190,220,.45);
 
-pointer-events:none;
+    font-size:20px;
 
-animation:heartFloat 14s linear infinite;
+    animation:heartFloat 14s linear infinite;
 
 }
+
+
 
 body::before{
 
-left:12%;
-
-bottom:-30px;
+    left:12%;
 
 }
+
+
 
 body::after{
 
-right:14%;
+    right:14%;
 
-bottom:-30px;
-
-animation-delay:7s;
+    animation-delay:7s;
 
 }
+
+
 
 @keyframes heartFloat{
 
-0%{
+    from{
 
-transform:translateY(0) scale(.8);
+        transform:translateY(0);
 
-opacity:0;
+        opacity:0;
 
-}
+    }
 
-15%{
 
-opacity:1;
+    to{
 
-}
+        transform:translateY(-110vh) scale(1.4);
 
-100%{
+        opacity:0;
 
-transform:translateY(-110vh) scale(1.4);
-
-opacity:0;
+    }
 
 }
 
-}
-/* ==========================
-      RESPONSIVE
-========================== */
 
-@media (max-width:768px){
 
-.container{
 
-width:92%;
 
-padding:30px;
 
-}
 
-#title{
-
-font-size:2.2rem;
-
-}
-
-h2{
-
-font-size:1.1rem;
-
-}
-
-#countdown{
-
-font-size:1.7rem;
-
-}
-
-.subtitle{
-
-font-size:.95rem;
-
-}
-
-.letterButton{
-
-font-size:55px;
-
-}
-
-.paper{
-
-padding:28px;
-
-}
-
-#typedText{
-
-font-size:1rem;
-
-line-height:1.8;
-
-}
-
-.moon{
-
-width:100px;
-
-height:100px;
-
-top:25px;
-
-right:25px;
-
-}
-
-}
 
 /* ==========================
-      SCROLLBAR
-========================== */
-
-::-webkit-scrollbar{
-
-width:8px;
-
-}
-
-::-webkit-scrollbar-thumb{
-
-background:#c9dcff;
-
-border-radius:10px;
-
-}
-
-/* ==========================
-      SMOOTH
-========================== */
-
-button{
-
-transition:.3s;
-
-}
-
-button:hover{
-
-transform:scale(1.05);
-
-}
-
-button:active{
-
-transform:scale(.96);
-
-}
-/* ===================================
           COZY ROOM
-=================================== */
+========================== */
+
 
 .room{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-display:none;
+    display:none;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 
-flex-direction:column;
+    overflow:hidden;
 
-background:
-linear-gradient(
-to bottom,
-#1d274d,
-#4b5fa6,
-#9cc8ff);
 
-overflow:hidden;
+    background:
 
-z-index:2000;
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
 
 }
+
+
 
 .room.show{
 
-display:flex;
+    display:flex;
 
-animation:fadeRoom 1.2s ease;
+    animation:fadeRoom 1.2s ease;
 
 }
+
+
 
 @keyframes fadeRoom{
 
-from{
+    from{
 
-opacity:0;
+        opacity:0;
 
-transform:scale(1.05);
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
 
 }
 
-to{
 
-opacity:1;
 
-transform:scale(1);
 
-}
 
-}
 
-/* ======================
-      WINDOW
-====================== */
+
+/* ==========================
+          WINDOW
+========================== */
+
 
 .window{
 
-position:absolute;
+    position:absolute;
 
-top:70px;
+    top:70px;
 
-right:120px;
+    right:120px;
 
-width:230px;
+    width:230px;
 
-height:260px;
+    height:260px;
 
-border-radius:18px;
 
-background:linear-gradient(
-to bottom,
-#203868,
-#7ea8ff);
+    border-radius:18px;
 
-border:10px solid #7b5538;
 
-box-shadow:
-0 0 40px rgba(255,255,255,.15);
+    background:
 
-}
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
 
-/* ======================
-     FIREPLACE
-====================== */
 
-.fireplace{
+    border:10px solid #7b5538;
 
-position:absolute;
 
-bottom:60px;
-
-left:120px;
-
-width:170px;
-
-height:170px;
-
-background:#9b6640;
-
-border-radius:20px;
-
-box-shadow:
-0 0 30px rgba(255,180,100,.4);
-
-}
-
-.fireplace::before{
-
-content:"";
-
-position:absolute;
-
-bottom:25px;
-
-left:25px;
-
-width:120px;
-
-height:80px;
-
-background:orange;
-
-border-radius:15px;
-
-animation:fireGlow 2s infinite alternate;
-
-}
-@keyframes fireGlow{
-
-0%{
-opacity:.7;
-}
-
-100%{
-opacity:1;
-box-shadow:0 0 25px orange;
-}
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
 
 }
 
 
-/* ======================
-        RUG
-====================== */
 
-.rug{
 
-position:absolute;
-
-bottom:40px;
-
-width:420px;
-
-height:140px;
-
-border-radius:100px;
-
-background:#f4c2d7;
-
-opacity:.8;
-
-}
-
-/* ===================================
-        BOOKSHELF
-=================================== */
-
-.books{
-
-position:absolute;
-
-left:70px;
-
-top:120px;
-
-width:140px;
-
-height:220px;
-
-background:#6f4c33;
-
-border-radius:12px;
-
-box-shadow:0 0 20px rgba(0,0,0,.2);
-
-}
-
-.books::before{
-
-content:"📚";
-
-position:absolute;
-
-font-size:70px;
-
-left:25px;
-
-top:40px;
-
-}
-
-/* ===================================
-            PLANT
-=================================== */
-
-.plant{
-
-position:absolute;
-
-right:90px;
-
-bottom:70px;
-
-width:80px;
-
-height:120px;
-
-}
-
-.plant::before{
-
-content:"🪴";
-
-position:absolute;
-
-font-size:70px;
-
-}
-
-/* ===================================
-            TEDDY
-=================================== */
-
-.teddy{
-
-position:absolute;
-
-bottom:120px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-font-size:65px;
-
-animation:teddyBounce 2.5s infinite ease-in-out;
-
-cursor:pointer;
-
-}
-
-@keyframes teddyBounce{
-
-0%{
-
-transform:translateX(-50%) translateY(0);
-
-}
-
-50%{
-
-transform:translateX(-50%) translateY(-8px);
-
-}
-
-100%{
-
-transform:translateX(-50%) translateY(0);
-
-}
-
-}
-
-/* ===================================
-              GIFT
-=================================== */
-
-.gift{
-
-position:absolute;
-
-right:220px;
-
-bottom:85px;
-
-font-size:60px;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.gift:hover{
-
-transform:scale(1.1);
-
-}
-
-/* ===================================
-              CAKE
-=================================== */
-
-.cake{
-
-position:absolute;
-
-left:300px;
-
-bottom:85px;
-
-font-size:60px;
-
-transition:.3s;
-
-}
-
-.cake:hover{
-
-transform:scale(1.08);
-
-}
-/* ===================================
-        YOUR CHARACTER
-=================================== */
-
-.you{
-
-position:absolute;
-
-right:320px;
-
-bottom:90px;
-
-width:90px;
-
-height:180px;
-
-display:flex;
-
-flex-direction:column;
-
-align-items:center;
-
-animation:idle 3s ease-in-out infinite;
-
-}
-
-/* Head */
-
-.head{
-
-width:58px;
-
-height:58px;
-
-background:#ffe8d9;
-
-border-radius:50%;
-
-position:relative;
-
-box-shadow:0 3px 8px rgba(0,0,0,.2);
-
-}
-
-/* Hair */
-
-.head::before{
-
-content:"";
-
-position:absolute;
-
-top:-8px;
-
-left:-3px;
-
-width:64px;
-
-height:35px;
-
-background:#4a2c22;
-
-border-radius:40px 40px 20px 20px;
-
-}
-
-/* Eyes */
-
-.head::after{
-
-content:"•   •";
-
-position:absolute;
-
-left:13px;
-
-top:20px;
-
-font-size:15px;
-
-color:#333;
-
-letter-spacing:8px;
-
-}
-
-/* Body */
-
-.body{
-
-margin-top:-5px;
-
-width:68px;
-
-height:100px;
-
-background:linear-gradient(
-to bottom,
-#dce9ff,
-#b9cfff);
-
-border-radius:22px;
-
-}
-
-/* Idle Animation */
-
-@keyframes idle{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-6px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ===================================
-        SPEECH BUBBLE
-=================================== */
-
-.speech{
-
-position:absolute;
-
-right:410px;
-
-bottom:290px;
-
-background:white;
-
-color:#444;
-
-padding:14px 20px;
-
-border-radius:18px;
-
-font-weight:700;
-
-font-size:18px;
-
-opacity:0;
-
-transform:translateY(10px);
-
-transition:.6s;
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.18);
-
-}
-
-.speech.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-/* ===================================
-        DREAMY ROOM UPGRADE
-=================================== */
-
-.room{
-
-background:
-radial-gradient(circle at top,#5d7fd9 0%,#314d91 35%,#1a2345 100%);
-
-}
-
-/* Moonlight */
-
-.room::before{
-
-content:"";
-
-position:absolute;
-
-top:-120px;
-
-right:-120px;
-
-width:420px;
-
-height:420px;
-
-border-radius:50%;
-
-background:radial-gradient(circle,
-rgba(255,255,220,.45),
-transparent 70%);
-
-filter:blur(15px);
-
-animation:moonLight 5s ease-in-out infinite;
-
-}
-
-/* Floating stars */
-
-.room::after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background-image:
-
-radial-gradient(white 1px,transparent 1px),
-
-radial-gradient(#fff8cc 1px,transparent 1px),
-
-radial-gradient(#ffffff 2px,transparent 2px);
-
-background-size:
-
-120px 120px,
-
-180px 180px,
-
-250px 250px;
-
-opacity:.35;
-
-animation:starMove 70s linear infinite;
-
-pointer-events:none;
-
-}
-
-@keyframes moonLight{
-
-0%{
-
-opacity:.5;
-
-}
-
-50%{
-
-opacity:1;
-
-}
-
-100%{
-
-opacity:.5;
-
-}
-
-}
-
-@keyframes starMove{
-
-from{
-
-transform:translateY(0);
-
-}
-
-to{
-
-transform:translateY(-150px);
-
-}
-
-}
-
-/* Window */
-
-.window{
-
-overflow:hidden;
-
-background:
-
-linear-gradient(
-
-to bottom,
-
-#163266,
-
-#6b95ff);
-
-}
 
 .window::before{
 
-content:"🌙";
+    content:"🌙";
 
-position:absolute;
+    position:absolute;
 
-right:25px;
+    right:25px;
 
-top:20px;
+    top:20px;
 
-font-size:55px;
-
-animation:moonFloat 6s ease-in-out infinite;
+    font-size:55px;
 
 }
 
-.window::after{
 
-content:"";
 
-position:absolute;
 
-left:0;
 
-top:0;
 
-width:100%;
 
-height:100%;
 
-background:
+/* ==========================
+        FIREPLACE
+========================== */
 
-repeating-linear-gradient(
-
-80deg,
-
-transparent 0px,
-
-transparent 10px,
-
-rgba(255,255,255,.15) 11px,
-
-transparent 13px);
-
-animation:rain 0.45s linear infinite;
-
-}
-
-@keyframes rain{
-
-from{
-
-transform:translateY(-30px);
-
-}
-
-to{
-
-transform:translateY(30px);
-
-}
-
-}
-
-@keyframes moonFloat{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-8px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-/* ===================================
-        COZY FURNITURE
-=================================== */
-
-/* Wooden Floor */
-
-.room{
-
-background:
-linear-gradient(to bottom,
-#233665 0%,
-#3f5fa8 60%,
-#7a573b 60%,
-#6a492f 100%);
-
-}
-
-/* Fireplace Glow */
 
 .fireplace{
 
-background:#8b5a3c;
+    position:absolute;
 
-border:8px solid #6e4227;
+    bottom:60px;
 
-box-shadow:
-0 0 40px rgba(255,170,60,.5);
+    left:120px;
 
-}
 
-.fireplace::after{
+    width:170px;
 
-content:"";
+    height:170px;
 
-position:absolute;
 
-left:-35px;
+    background:#9b6640;
 
-top:-35px;
+    border-radius:20px;
 
-width:240px;
 
-height:240px;
-
-border-radius:50%;
-
-background:radial-gradient(
-rgba(255,170,70,.25),
-transparent 70%);
-
-animation:fireLight 2s infinite alternate;
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
 
 }
 
-@keyframes fireLight{
 
-0%{
 
-opacity:.4;
+.fireplace::before{
 
-}
+    content:"🔥";
 
-100%{
+    position:absolute;
 
-opacity:1;
+    bottom:20px;
 
-}
+    left:35px;
 
-}
-
-/* Bookshelf */
-
-.books{
-
-background:#5d3d28;
-
-border:6px solid #3d2618;
+    font-size:70px;
 
 }
 
-.books::after{
 
-content:"📖 📚 📘";
 
-position:absolute;
 
-bottom:25px;
 
-left:10px;
 
-font-size:28px;
 
-}
 
-/* Rug */
+/* ==========================
+          RUG
+========================== */
+
 
 .rug{
 
-background:
+    position:absolute;
 
-radial-gradient(circle,
-#ffd8e8,
-#f6a8c7);
+    bottom:40px;
 
-box-shadow:
-0 0 35px rgba(255,190,220,.35);
 
-}
+    width:420px;
 
-/* Window Glow */
+    height:140px;
 
-.window{
 
-box-shadow:
+    border-radius:100px;
 
-0 0 40px rgba(180,220,255,.5);
+
+    background:#f4c2d7;
 
 }
 
-/* Teddy */
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
 
 .teddy{
 
-font-size:78px;
+    position:absolute;
 
-filter:drop-shadow(0 6px 8px rgba(0,0,0,.25));
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
 
 }
 
-/* Cake */
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
 
 .cake{
 
-font-size:72px;
+    position:absolute;
 
-animation:cakeFloat 3s ease-in-out infinite;
+    left:300px;
 
-}
+    bottom:85px;
 
-@keyframes cakeFloat{
 
-0%{
+    font-size:72px;
 
-transform:translateY(0);
-
-}
-
-50%{
-
-transform:translateY(-6px);
+    cursor:pointer;
 
 }
 
-100%{
 
-transform:translateY(0);
-
-}
-
-}
-
-/* Gift */
 
 .gift{
 
-font-size:70px;
+    position:absolute;
 
-animation:giftBounce 2.8s infinite;
+    right:220px;
 
-}
+    bottom:85px;
 
-@keyframes giftBounce{
 
-0%{
+    font-size:70px;
 
-transform:scale(1);
-
-}
-
-50%{
-
-transform:scale(1.08);
+    cursor:pointer;
 
 }
 
-100%{
 
-transform:scale(1);
 
-}
-}
-/* ===================================
-        FIRELIES
-=================================== */
 
-.room .firefly{
 
-position:absolute;
 
-width:8px;
 
-height:8px;
+/* ==========================
+        CHARACTER
+========================== */
 
-border-radius:50%;
 
-background:#fff6a8;
+.you{
 
-box-shadow:0 0 12px #fff7b5;
+    position:absolute;
 
-animation:fireflyGlow 2s infinite alternate;
+    right:320px;
 
-}
+    bottom:90px;
 
-.room .firefly:nth-child(1){
 
-top:18%;
-left:18%;
+    width:90px;
 
-animation-duration:4s;
+    height:180px;
+
+
+    animation:idle 3s infinite;
 
 }
 
-.room .firefly:nth-child(2){
 
-top:32%;
-left:75%;
 
-animation-duration:5s;
+.head{
 
-}
+    width:58px;
 
-.room .firefly:nth-child(3){
+    height:58px;
 
-top:62%;
-left:28%;
 
-animation-duration:6s;
+    background:#ffe8d9;
+
+    border-radius:50%;
 
 }
 
-.room .firefly:nth-child(4){
 
-top:42%;
-left:58%;
 
-animation-duration:4.5s;
+.body{
 
-}
+    margin-top:-5px;
 
-.room .firefly:nth-child(5){
 
-top:76%;
-left:82%;
+    width:68px;
 
-animation-duration:5.5s;
+    height:100px;
 
-}
 
-@keyframes fireflyGlow{
+    background:#dce9ff;
 
-0%{
 
-opacity:.2;
-
-transform:translateY(0) scale(.8);
+    border-radius:22px;
 
 }
 
-50%{
 
-opacity:1;
 
-transform:translateY(-10px) scale(1.2);
+@keyframes idle{
 
-}
+    50%{
 
-100%{
+        transform:translateY(-6px);
 
-opacity:.3;
-
-transform:translateY(0) scale(.9);
+    }
 
 }
 
-}
 
-/* ===================================
-        SPEECH ANIMATION
-=================================== */
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
 
 .speech{
 
-animation:speechPop .6s ease;
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
 
 }
 
-@keyframes speechPop{
 
-0%{
 
-opacity:0;
+.speech.show{
 
-transform:translateY(20px) scale(.8);
+    opacity:1;
 
 }
 
-100%{
 
-opacity:1;
 
-transform:translateY(0) scale(1);
 
-}
 
-}
+
+
+
 /* ==========================
-        WOODEN DOOR
+            DOOR
 ========================== */
+
 
 .doorScene{
 
-display:none;
+    display:none;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
-
-margin-bottom:40px;
+    align-items:center;
 
 }
+
+
 
 .doorFrame{
 
-width:180px;
+    width:180px;
 
-height:300px;
+    height:300px;
 
-padding:10px;
 
-background:#5d3b22;
+    padding:10px;
 
-border-radius:10px;
 
-box-shadow:0 0 30px rgba(0,0,0,.35);
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
 
 }
+
+
 
 .door{
 
-width:100%;
+    width:100%;
 
-height:100%;
+    height:100%;
 
-background:linear-gradient(#9b6d43,#7a4f2b);
 
-border-radius:8px;
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
 
-position:relative;
 
-transform-origin:left center;
+    border-radius:8px;
 
-transition:1.5s ease;
 
-cursor:pointer;
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
 
 }
+
+
 
 .door.open{
 
-transform:perspective(900px) rotateY(-105deg);
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
 
 }
+
+
 
 .knob{
 
-position:absolute;
+    position:absolute;
 
-right:18px;
 
-top:50%;
+    right:18px;
 
-width:12px;
+    top:50%;
 
-height:12px;
 
-border-radius:50%;
+    width:12px;
 
-background:#ffd66b;
+    height:12px;
 
-box-shadow:0 0 10px gold;
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
 
 }
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+
+}/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+
+}/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+
+}/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+
+#continueButton{
+
+    display:none;
+
+    margin:35px auto 0;
+
+    padding:15px 40px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+    135deg,
+    #ffdbe9,
+    #d8ebff);
+
+
+    font-family:'Quicksand',sans-serif;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:#35529a;
+
+    cursor:pointer;
+
+}
+
+
+#continueButton:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        SPARKLES
+========================== */
+
+
+.sparkles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+
+
+.sparkles::before,
+.sparkles::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    font-size:18px;
+
+    color:white;
+
+    animation:sparkleFloat 10s linear infinite;
+
+}
+
+
+
+.sparkles::before{
+
+    left:20%;
+
+    bottom:-20px;
+
+}
+
+
+
+.sparkles::after{
+
+    right:18%;
+
+    bottom:-20px;
+
+    animation-delay:5s;
+
+}
+
+
+
+@keyframes sparkleFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    20%{
+
+        opacity:1;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        HEARTS
+========================== */
+
+
+body::before,
+body::after{
+
+    content:"❤";
+
+    position:fixed;
+
+    bottom:-30px;
+
+    color:rgba(255,190,220,.45);
+
+    font-size:20px;
+
+    animation:heartFloat 14s linear infinite;
+
+}
+
+
+
+body::before{
+
+    left:12%;
+
+}
+
+
+
+body::after{
+
+    right:14%;
+
+    animation-delay:7s;
+
+}
+
+
+
+@keyframes heartFloat{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        transform:translateY(-110vh) scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          COZY ROOM
+========================== */
+
+
+.room{
+
+    position:fixed;
+
+    inset:0;
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #1d274d,
+    #4b5fa6,
+    #9cc8ff);
+
+
+    z-index:2000;
+
+}
+
+
+
+.room.show{
+
+    display:flex;
+
+    animation:fadeRoom 1.2s ease;
+
+}
+
+
+
+@keyframes fadeRoom{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(1.05);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          WINDOW
+========================== */
+
+
+.window{
+
+    position:absolute;
+
+    top:70px;
+
+    right:120px;
+
+    width:230px;
+
+    height:260px;
+
+
+    border-radius:18px;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #203868,
+    #7ea8ff);
+
+
+    border:10px solid #7b5538;
+
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+.window::before{
+
+    content:"🌙";
+
+    position:absolute;
+
+    right:25px;
+
+    top:20px;
+
+    font-size:55px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        FIREPLACE
+========================== */
+
+
+.fireplace{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:120px;
+
+
+    width:170px;
+
+    height:170px;
+
+
+    background:#9b6640;
+
+    border-radius:20px;
+
+
+    box-shadow:
+    0 0 40px rgba(255,180,100,.5);
+
+}
+
+
+
+.fireplace::before{
+
+    content:"🔥";
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:35px;
+
+    font-size:70px;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+          RUG
+========================== */
+
+
+.rug{
+
+    position:absolute;
+
+    bottom:40px;
+
+
+    width:420px;
+
+    height:140px;
+
+
+    border-radius:100px;
+
+
+    background:#f4c2d7;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+          OBJECTS
+========================== */
+
+
+.teddy{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:78px;
+
+    cursor:pointer;
+
+
+    animation:teddyBounce 2.5s infinite;
+
+}
+
+
+
+@keyframes teddyBounce{
+
+    50%{
+
+        transform:
+        translateX(-50%)
+        translateY(-8px);
+
+    }
+
+}
+
+
+
+
+
+
+.cake{
+
+    position:absolute;
+
+    left:300px;
+
+    bottom:85px;
+
+
+    font-size:72px;
+
+    cursor:pointer;
+
+}
+
+
+
+.gift{
+
+    position:absolute;
+
+    right:220px;
+
+    bottom:85px;
+
+
+    font-size:70px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        CHARACTER
+========================== */
+
+
+.you{
+
+    position:absolute;
+
+    right:320px;
+
+    bottom:90px;
+
+
+    width:90px;
+
+    height:180px;
+
+
+    animation:idle 3s infinite;
+
+}
+
+
+
+.head{
+
+    width:58px;
+
+    height:58px;
+
+
+    background:#ffe8d9;
+
+    border-radius:50%;
+
+}
+
+
+
+.body{
+
+    margin-top:-5px;
+
+
+    width:68px;
+
+    height:100px;
+
+
+    background:#dce9ff;
+
+
+    border-radius:22px;
+
+}
+
+
+
+@keyframes idle{
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        SPEECH
+========================== */
+
+
+.speech{
+
+    position:absolute;
+
+    right:410px;
+
+    bottom:290px;
+
+
+    background:white;
+
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+
+    opacity:0;
+
+
+    transition:.6s;
+
+}
+
+
+
+.speech.show{
+
+    opacity:1;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+            DOOR
+========================== */
+
+
+.doorScene{
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+
+.doorFrame{
+
+    width:180px;
+
+    height:300px;
+
+
+    padding:10px;
+
+
+    background:#5d3b22;
+
+
+    border-radius:10px;
+
+
+    perspective:1000px;
+
+}
+
+
+
+.door{
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+    linear-gradient(
+    #9b6d43,
+    #7a4f2b);
+
+
+    border-radius:8px;
+
+
+    transform-origin:left center;
+
+
+    transition:1.5s;
+
+
+    cursor:pointer;
+
+}
+
+
+
+.door.open{
+
+    transform:
+    perspective(900px)
+    rotateY(-105deg);
+
+}
+
+
+
+.knob{
+
+    position:absolute;
+
+
+    right:18px;
+
+    top:50%;
+
+
+    width:12px;
+
+    height:12px;
+
+
+    border-radius:50%;
+
+
+    background:#ffd66b;
+
+
+    box-shadow:0 0 10px gold;
+
+}
+
+
+
+
+
+
+
+
+/* ==========================
+        MOBILE
+========================== */
+
+
+@media(max-width:768px){
+
+
+.container{
+
+    padding:30px;
+
+}
+
+
+#title{
+
+    font-size:2.2rem;
+
+}
+
+
+.window{
+
+    width:140px;
+
+    height:170px;
+
+    right:20px;
+
+}
+
+
+
+.fireplace{
+
+    left:20px;
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+.teddy{
+
+    font-size:55px;
+
+}
+
+
+}
+
 
