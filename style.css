@@ -2517,3 +2517,87 @@ button:active{
     }
 
 }
+/* ==========================
+      MOBILE ROOM FIX
+========================== */
+
+@media(max-width:768px){
+
+    .room{
+        overflow:auto;
+        justify-content:flex-start;
+    }
+
+
+    .realWindow{
+        width:150px;
+        height:180px;
+        top:40px;
+        right:20px;
+    }
+
+
+    .bookshelf{
+        left:20px;
+        top:120px;
+        width:100px;
+        height:180px;
+    }
+
+
+    .fireplaceCorner{
+        left:20px;
+        bottom:80px;
+        width:120px;
+        height:120px;
+        font-size:55px;
+    }
+
+
+    .bed{
+
+        width:220px;
+        height:110px;
+
+        right:20px;
+        bottom:100px;
+
+    }
+
+
+    .you{
+
+        right:50%;
+        transform:translateX(50%);
+        bottom:100px;
+
+    }
+
+
+    .teddy{
+
+        bottom:60px;
+
+    }
+
+
+    .speech{
+
+        right:20px;
+        left:20px;
+        bottom:300px;
+
+        text-align:center;
+
+    }
+
+
+    .curtain{
+
+        width:80px;
+        height:160px;
+
+    }
+
+
+}
