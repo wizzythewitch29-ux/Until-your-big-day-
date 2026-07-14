@@ -950,3 +950,334 @@ opacity:.8;
 
 }
 }
+/* ===================================
+        BOOKSHELF
+=================================== */
+
+.books{
+
+position:absolute;
+
+left:70px;
+
+top:120px;
+
+width:140px;
+
+height:220px;
+
+background:#6f4c33;
+
+border-radius:12px;
+
+box-shadow:0 0 20px rgba(0,0,0,.2);
+
+}
+
+.books::before{
+
+content:"📚";
+
+position:absolute;
+
+font-size:70px;
+
+left:25px;
+
+top:40px;
+
+}
+
+/* ===================================
+            PLANT
+=================================== */
+
+.plant{
+
+position:absolute;
+
+right:90px;
+
+bottom:70px;
+
+width:80px;
+
+height:120px;
+
+}
+
+.plant::before{
+
+content:"🪴";
+
+position:absolute;
+
+font-size:70px;
+
+}
+
+/* ===================================
+            TEDDY
+=================================== */
+
+.teddy{
+
+position:absolute;
+
+bottom:120px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:65px;
+
+animation:teddyBounce 2.5s infinite ease-in-out;
+
+cursor:pointer;
+
+}
+
+@keyframes teddyBounce{
+
+0%{
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+50%{
+
+transform:translateX(-50%) translateY(-8px);
+
+}
+
+100%{
+
+transform:translateX(-50%) translateY(0);
+
+}
+
+}
+
+/* ===================================
+              GIFT
+=================================== */
+
+.gift{
+
+position:absolute;
+
+right:220px;
+
+bottom:85px;
+
+font-size:60px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.gift:hover{
+
+transform:scale(1.1);
+
+}
+
+/* ===================================
+              CAKE
+=================================== */
+
+.cake{
+
+position:absolute;
+
+left:300px;
+
+bottom:85px;
+
+font-size:60px;
+
+transition:.3s;
+
+}
+
+.cake:hover{
+
+transform:scale(1.08);
+
+}
+/* ===================================
+        YOUR CHARACTER
+=================================== */
+
+.you{
+
+position:absolute;
+
+right:320px;
+
+bottom:90px;
+
+width:90px;
+
+height:180px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+animation:idle 3s ease-in-out infinite;
+
+}
+
+/* Head */
+
+.head{
+
+width:58px;
+
+height:58px;
+
+background:#ffe8d9;
+
+border-radius:50%;
+
+position:relative;
+
+box-shadow:0 3px 8px rgba(0,0,0,.2);
+
+}
+
+/* Hair */
+
+.head::before{
+
+content:"";
+
+position:absolute;
+
+top:-8px;
+
+left:-3px;
+
+width:64px;
+
+height:35px;
+
+background:#4a2c22;
+
+border-radius:40px 40px 20px 20px;
+
+}
+
+/* Eyes */
+
+.head::after{
+
+content:"•   •";
+
+position:absolute;
+
+left:13px;
+
+top:20px;
+
+font-size:15px;
+
+color:#333;
+
+letter-spacing:8px;
+
+}
+
+/* Body */
+
+.body{
+
+margin-top:-5px;
+
+width:68px;
+
+height:100px;
+
+background:linear-gradient(
+to bottom,
+#dce9ff,
+#b9cfff);
+
+border-radius:22px;
+
+}
+
+/* Idle Animation */
+
+@keyframes idle{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===================================
+        SPEECH BUBBLE
+=================================== */
+
+.speech{
+
+position:absolute;
+
+right:410px;
+
+bottom:290px;
+
+background:white;
+
+color:#444;
+
+padding:14px 20px;
+
+border-radius:18px;
+
+font-weight:700;
+
+font-size:18px;
+
+opacity:0;
+
+transform:translateY(10px);
+
+transition:.6s;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.18);
+
+}
+
+.speech.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
