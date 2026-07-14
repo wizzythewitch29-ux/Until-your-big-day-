@@ -2208,3 +2208,312 @@ button:active{
 
 
 }
+/* ==========================
+      CURTAINS
+========================== */
+
+
+.curtain{
+
+    position:absolute;
+
+    top:0;
+
+    width:150px;
+
+    height:260px;
+
+    background:
+
+    linear-gradient(
+    to right,
+    #8d5574,
+    #d49ab5
+    );
+
+    z-index:3;
+
+}
+
+
+.curtainLeft{
+
+    left:0;
+
+    border-radius:0 0 50px 0;
+
+}
+
+
+.curtainRight{
+
+    right:0;
+
+    border-radius:0 0 0 50px;
+
+}
+
+
+
+
+
+/* ==========================
+        BOOKSHELF
+========================== */
+
+
+.bookshelf{
+
+    position:absolute;
+
+    left:80px;
+
+    top:120px;
+
+
+    width:160px;
+
+    height:260px;
+
+
+    background:#5b3824;
+
+
+    border:8px solid #3b2415;
+
+
+    border-radius:10px;
+
+
+    z-index:4;
+
+
+    box-shadow:
+
+    0 15px 25px rgba(0,0,0,.3);
+
+}
+
+
+.bookRow{
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    font-size:28px;
+
+}
+
+
+
+
+
+/* ==========================
+      FIREPLACE CORNER
+========================== */
+
+
+.fireplaceCorner{
+
+    position:absolute;
+
+
+    left:270px;
+
+    bottom:80px;
+
+
+    width:180px;
+
+    height:170px;
+
+
+    background:#7a4b30;
+
+
+    border-radius:20px;
+
+
+    border:8px solid #4c2b1b;
+
+
+    font-size:80px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    z-index:5;
+
+
+}
+
+
+
+.fireGlow{
+
+    position:absolute;
+
+
+    width:230px;
+
+    height:230px;
+
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,180,80,.45),
+    transparent 70%
+    );
+
+
+    animation:firePulse 2s infinite alternate;
+
+}
+
+
+@keyframes firePulse{
+
+    from{
+
+        opacity:.5;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+/* ==========================
+        WALL DECOR
+========================== */
+
+
+.wallDecor{
+
+    position:absolute;
+
+
+    top:100px;
+
+    left:45%;
+
+
+    font-size:45px;
+
+
+}
+
+
+
+
+
+/* ==========================
+        PLANTS
+========================== */
+
+
+.flowerPot{
+
+    position:absolute;
+
+
+    bottom:80px;
+
+    right:80px;
+
+
+    font-size:65px;
+
+}
+
+
+
+.smallPlant{
+
+    position:absolute;
+
+
+    top:350px;
+
+    right:80px;
+
+
+    font-size:60px;
+
+}
+
+
+
+
+
+
+
+/* ==========================
+        FAIRY LIGHTS
+========================== */
+
+
+.fairyLights{
+
+    position:absolute;
+
+
+    top:40px;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    font-size:25px;
+
+
+    letter-spacing:20px;
+
+
+    animation:lightGlow 2s infinite alternate;
+
+
+}
+
+
+
+@keyframes lightGlow{
+
+    from{
+
+        filter:drop-shadow(0 0 5px #fff);
+
+    }
+
+
+    to{
+
+        filter:drop-shadow(0 0 20px #ffe89a);
+
+    }
+
+}
