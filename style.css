@@ -910,23 +910,19 @@ border-radius:15px;
 animation:fireGlow 2s infinite alternate;
 
 }
-
 @keyframes fireGlow{
 
 0%{
-
 opacity:.7;
-
 }
 
 100%{
-
 opacity:1;
-
-box-shadow:
-0 0 25px orange;
+box-shadow:0 0 25px orange;
+}
 
 }
+
 
 /* ======================
         RUG
@@ -949,7 +945,7 @@ background:#f4c2d7;
 opacity:.8;
 
 }
-}
+
 /* ===================================
         BOOKSHELF
 =================================== */
