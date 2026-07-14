@@ -1805,3 +1805,81 @@ transform:translateY(0) scale(1);
 }
 
 }
+/* ==========================
+        WOODEN DOOR
+========================== */
+
+.doorScene{
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+margin-bottom:40px;
+
+}
+
+.doorFrame{
+
+width:180px;
+
+height:300px;
+
+padding:10px;
+
+background:#5d3b22;
+
+border-radius:10px;
+
+box-shadow:0 0 30px rgba(0,0,0,.35);
+
+}
+
+.door{
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(#9b6d43,#7a4f2b);
+
+border-radius:8px;
+
+position:relative;
+
+transform-origin:left center;
+
+transition:1.5s ease;
+
+cursor:pointer;
+
+}
+
+.door.open{
+
+transform:perspective(900px) rotateY(-105deg);
+
+}
+
+.knob{
+
+position:absolute;
+
+right:18px;
+
+top:50%;
+
+width:12px;
+
+height:12px;
+
+border-radius:50%;
+
+background:#ffd66b;
+
+box-shadow:0 0 10px gold;
+
+}
+
