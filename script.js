@@ -3,8 +3,7 @@ const overlay = document.getElementById("letterOverlay");
 const typedText = document.getElementById("typedText");
 const continueButton = document.getElementById("continueButton");
 
-const room = document.getElementById("room");
-const speech = document.getElementById("speech");
+
 /* ==========================
         COUNTDOWN
 ========================== */
