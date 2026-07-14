@@ -11,7 +11,7 @@ const continueBtn = document.getElementById("continueBtn");
 const home = document.getElementById("home");
 const envelopePage = document.getElementById("envelopePage");
 const letterPage = document.getElementById("letterPage");
-
+const libraryPage = document.getElementById("libraryPage");
 const envelope = document.getElementById("envelope");
 
 function updateCountdown() {
