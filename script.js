@@ -1,243 +1,160 @@
-// ===============================
-// COUNTDOWN
-// ===============================
+/* ==========================
+        COUNTDOWN
+========================== */
 
 const birthday = new Date("August 17, 2026 00:00:00");
-
-const countdown = document.getElementById("countdown");
 
 function updateCountdown() {
 
     const now = new Date();
-    const difference = birthday - now;
 
+    const difference = birthday - now;
 
     if (difference <= 0) {
 
-        countdown.innerHTML = "🎉 Happy Birthday My Love 🎂";
-        return;
+        document.getElementById("countdown").innerHTML =
+            "🎉 Happy Birthday Baboo! 🎂";
 
+        return;
     }
 
-
-    const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-    );
-
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
     const hours = Math.floor(
         (difference % (1000 * 60 * 60 * 24)) /
         (1000 * 60 * 60)
     );
 
-
     const minutes = Math.floor(
         (difference % (1000 * 60 * 60)) /
         (1000 * 60)
     );
-
 
     const seconds = Math.floor(
         (difference % (1000 * 60)) /
         1000
     );
 
+    document.getElementById("countdown").innerHTML =
 
-    countdown.innerHTML =
-    `${days} Days<br>${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
+        `${days} Days<br>
+         ${hours} Hours
+         ${minutes} Minutes
+         ${seconds} Seconds`;
 
 }
-
 
 updateCountdown();
 
 setInterval(updateCountdown,1000);
 
+/* ==========================
+      LETTER MESSAGE
+========================== */
 
+const message = `Hello Baboo... 🧸
 
-// ===============================
-// PAGE SWITCHING
-// ===============================
+If you're reading this,
 
-const home = document.getElementById("home");
-const envelopePage = document.getElementById("envelopePage");
-const letterPage = document.getElementById("letterPage");
-const libraryPage = document.getElementById("libraryPage");
+it means another day has brought us closer to your birthday.
 
+I wanted to make you something more than a gift.
 
-const surpriseBtn =
-document.getElementById("surpriseBtn");
+So...
 
+I made you a little world.
 
-const continueBtn =
-document.getElementById("continueBtn");
+A place where every day another little piece of my heart waits for you.
 
+Whenever you're ready...
 
-const envelope =
-document.getElementById("envelope");
+Come inside. 💙`;
+/* ==========================
+      OPEN LETTER
+========================== */
 
+const openLetter = document.getElementById("openLetter");
+const overlay = document.getElementById("letterOverlay");
+const typedText = document.getElementById("typedText");
+const continueButton = document.getElementById("continueButton");
 
+openLetter.addEventListener("click", () => {
 
-surpriseBtn.addEventListener("click",()=>{
+    overlay.classList.add("show");
 
-    home.classList.add("hidden");
+    typedText.innerHTML = "";
 
-    envelopePage.classList.remove("hidden");
+    continueButton.style.display = "none";
 
-});
-
-
-
-// ===============================
-// OPEN ENVELOPE
-// ===============================
-
-
-envelope.addEventListener("click",()=>{
-
-
-    const flap =
-    document.querySelector(".envelope-flap");
-
-
-    flap.style.transform =
-    "rotateX(180deg)";
-
-
-    setTimeout(()=>{
-
-
-        envelopePage.classList.add("hidden");
-
-
-        letterPage.classList.remove("hidden");
-
-
-    },900);
-
-
+    typeLetter();
 
 });
 
+/* ==========================
+      TYPE ANIMATION
+========================== */
 
+let index = 0;
 
+function typeLetter() {
 
-// ===============================
-// ENTER HOME
-// ===============================
+    index = 0;
 
+    typedText.innerHTML = "";
 
-continueBtn.addEventListener("click",()=>{
+    const typing = setInterval(() => {
 
+        typedText.innerHTML += message.charAt(index);
 
-    letterPage.classList.add("hidden");
+        index++;
 
+        if (index >= message.length) {
 
-    libraryPage.classList.remove("hidden");
+            clearInterval(typing);
 
+            continueButton.style.display = "block";
+
+        }
+
+    }, 35);
+
+}
+/* ==========================
+      CONTINUE BUTTON
+========================== */
+
+continueButton.addEventListener("click", () => {
+
+    overlay.classList.remove("show");
+
+    setTimeout(() => {
+
+        alert(
+`🚪 Welcome to Baboo's World!
+
+Version 3 will include:
+
+🏡 Cozy Room
+🌙 Ghibli atmosphere
+🩷 Your character
+📖 Daily chapters
+⭐ Hidden surprises`
+        );
+
+    },300);
 
 });
 
+/* ==========================
+      CLOSE LETTER
+========================== */
 
+overlay.addEventListener("click",(event)=>{
 
+    if(event.target===overlay){
 
-// ===============================
-// MUSIC BUTTON
-// ===============================
-
-
-const music =
-document.getElementById("bgMusic");
-
-
-const musicBtn =
-document.getElementById("musicBtn");
-
-
-let playing = false;
-
-
-
-musicBtn.addEventListener("click",()=>{
-
-
-    if(!playing){
-
-
-        music.play();
-
-
-        playing = true;
-
-
-        musicBtn.innerHTML="⏸️";
-
-
-    }else{
-
-
-        music.pause();
-
-
-        playing=false;
-
-
-        musicBtn.innerHTML="🎵";
-
+        overlay.classList.remove("show");
 
     }
 
-
 });
-
-
-
-// ===============================
-// FLOATING STARS
-// ===============================
-
-
-setInterval(()=>{
-
-
-const star=document.createElement("div");
-
-
-star.innerHTML="✨";
-
-
-star.style.position="fixed";
-
-star.style.left=Math.random()*window.innerWidth+"px";
-
-star.style.top="-20px";
-
-star.style.fontSize="18px";
-
-star.style.pointerEvents="none";
-
-
-document.body.appendChild(star);
-
-
-
-setTimeout(()=>{
-
-star.style.transition="5s";
-
-star.style.top=window.innerHeight+"px";
-
-
-},50);
-
-
-
-setTimeout(()=>{
-
-star.remove();
-
-},5000);
-
-
-
-},1200);
