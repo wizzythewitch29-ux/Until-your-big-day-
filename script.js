@@ -158,3 +158,74 @@ overlay.addEventListener("click",(event)=>{
     }
 
 });
+/* ==========================
+      ENTER THE ROOM
+========================== */
+
+const room = document.getElementById("room");
+const speech = document.getElementById("speech");
+
+continueButton.addEventListener("click", () => {
+
+    // Close the letter
+    overlay.classList.remove("show");
+
+    // Wait for the fade animation
+    setTimeout(() => {
+
+        // Hide the first page
+        document.querySelector(".container").style.display = "none";
+
+        // Show the cozy room
+        room.classList.add("show");
+
+        // Character speaks
+        setTimeout(() => {
+
+            speech.classList.add("show");
+
+        },1200);
+
+    },600);
+
+});
+/* ==========================
+      TEDDY
+========================== */
+
+const teddy = document.querySelector(".teddy");
+
+teddy.addEventListener("click",()=>{
+
+    speech.innerHTML="🧸 Hehe... I was waiting for you, Baboo!";
+
+    speech.classList.add("show");
+
+});
+/* ==========================
+        GIFT
+========================== */
+
+const gift = document.querySelector(".gift");
+
+gift.addEventListener("click",()=>{
+
+    speech.innerHTML="🎁 Not yet, Baboo! Your birthday isn't here yet. 🤭";
+
+    speech.classList.add("show");
+
+});
+/* ==========================
+        CAKE
+========================== */
+
+const cake = document.querySelector(".cake");
+
+cake.addEventListener("click",()=>{
+
+    speech.innerHTML="🎂 Save the cake for August 17! 💙";
+
+    speech.classList.add("show");
+
+});
+
