@@ -218,4 +218,20 @@ cake.addEventListener("click",()=>{
     speech.classList.add("show");
 
 });
+const door = document.getElementById("door");
 
+door.addEventListener("click", () => {
+
+    door.classList.add("open");
+
+    setTimeout(() => {
+
+        document.getElementById("doorScene").style.display = "none";
+
+        document.querySelector(".letter").style.display = "block";
+
+        typeLetter();
+
+    },1500);
+
+});
