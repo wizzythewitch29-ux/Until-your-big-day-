@@ -72,21 +72,13 @@ Come inside. 💙`;
 /* ==========================
       OPEN LETTER
 ========================== */
-
-const openLetter = document.getElementById("openLetter");
-const overlay = document.getElementById("letterOverlay");
-const typedText = document.getElementById("typedText");
-const continueButton = document.getElementById("continueButton");
-
 openLetter.addEventListener("click", () => {
 
     overlay.classList.add("show");
 
-    typedText.innerHTML = "";
+    document.querySelector(".letter").style.display = "none";
 
-    continueButton.style.display = "none";
-
-    typeLetter();
+    document.getElementById("doorScene").style.display = "flex";
 
 });
 
@@ -122,28 +114,26 @@ function typeLetter() {
 /* ==========================
       CONTINUE BUTTON
 ========================== */
-
 continueButton.addEventListener("click", () => {
 
     overlay.classList.remove("show");
 
     setTimeout(() => {
 
-        alert(
-`🚪 Welcome to Baboo's World!
+        document.querySelector(".container").style.display = "none";
 
-Version 3 will include:
+        room.classList.add("show");
 
-🏡 Cozy Room
-🌙 Ghibli atmosphere
-🩷 Your character
-📖 Daily chapters
-⭐ Hidden surprises`
-        );
+        setTimeout(() => {
 
-    },300);
+            speech.classList.add("show");
+
+        },1200);
+
+    },600);
 
 });
+
 
 /* ==========================
       CLOSE LETTER
