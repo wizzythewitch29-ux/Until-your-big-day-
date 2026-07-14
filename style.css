@@ -2598,6 +2598,115 @@ button:active{
         height:160px;
 
     }
+        /* ==========================
+      PHONE LETTER FIX
+========================== */
 
+@media(max-width:768px){
+
+    .overlay{
+
+        align-items:flex-start;
+
+        overflow-y:auto;
+
+        padding:30px 0;
+
+    }
+
+
+    .letter{
+
+        margin:auto;
+
+        width:92%;
+
+    }
+
+
+    .paper{
+
+        padding:25px;
+
+        max-height:none;
+
+    }
+
+
+    #typedText{
+
+        min-height:auto;
+
+        font-size:1rem;
+
+        line-height:1.7;
+
+    }
+
+
+    #continueButton{
+
+        position:relative;
+
+        margin:25px auto 10px;
+
+    }
+
+/* ==========================
+      PHONE LETTER FIX
+========================== */
+
+@media(max-width:768px){
+
+    .overlay{
+
+        align-items:flex-start;
+
+        overflow-y:auto;
+
+        padding:30px 0;
+
+    }
+
+
+    .letter{
+
+        margin:auto;
+
+        width:92%;
+
+    }
+
+
+    .paper{
+
+        padding:25px;
+
+        max-height:none;
+
+    }
+
+
+    #typedText{
+
+        min-height:auto;
+
+        font-size:1rem;
+
+        line-height:1.7;
+
+    }
+
+
+    #continueButton{
+
+        position:relative;
+
+        margin:25px auto 10px;
+
+    }
 
 }
+
+
+
