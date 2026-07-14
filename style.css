@@ -1937,3 +1937,274 @@ button:active{
     transform:scale(.96);
 
 }
+/* ==========================
+        ROOM STRUCTURE
+========================== */
+
+
+.roomWall{
+
+    position:absolute;
+
+    inset:0;
+
+    height:65%;
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #25345f,
+    #455d9e
+    );
+
+    z-index:0;
+
+}
+
+
+
+
+.woodFloor{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:35%;
+
+
+    background:
+
+    linear-gradient(
+    to bottom,
+    #8b6240,
+    #4a2d1c
+    );
+
+
+    z-index:1;
+
+
+}
+
+
+
+.woodFloor::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+
+    background:
+
+    repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,.08) 0px,
+    transparent 4px,
+    transparent 80px
+    );
+
+}
+
+
+
+
+.bed{
+
+    position:absolute;
+
+    right:180px;
+
+    bottom:120px;
+
+
+    width:280px;
+
+    height:140px;
+
+
+    background:#c58aa6;
+
+
+    border-radius:25px;
+
+
+    box-shadow:
+
+    0 20px 35px rgba(0,0,0,.35);
+
+
+    z-index:5;
+
+}
+
+
+
+
+.bed::before{
+
+    content:"";
+
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+
+    width:100%;
+
+    height:25px;
+
+
+    background:#7d5368;
+
+
+    border-radius:0 0 25px 25px;
+
+}
+
+
+
+
+.bedPillow{
+
+    position:absolute;
+
+
+    top:20px;
+
+    left:35px;
+
+
+    width:80px;
+
+    height:45px;
+
+
+    background:#fff4fa;
+
+
+    border-radius:25px;
+
+}
+
+
+
+
+.bedBlanket{
+
+    position:absolute;
+
+
+    right:20px;
+
+    bottom:20px;
+
+
+    width:160px;
+
+    height:80px;
+
+
+    background:#b9d1ff;
+
+
+    border-radius:20px;
+
+}
+
+
+
+
+.nightTable{
+
+    position:absolute;
+
+
+    right:90px;
+
+    bottom:140px;
+
+
+    width:60px;
+
+    height:100px;
+
+
+    background:#70462b;
+
+
+    border-radius:10px;
+
+
+    z-index:4;
+
+}
+
+
+
+
+.lampGlow{
+
+    position:absolute;
+
+
+    right:95px;
+
+    bottom:240px;
+
+
+    font-size:55px;
+
+
+    filter:
+
+    drop-shadow(0 0 25px #ffd86b);
+
+
+    z-index:6;
+
+}
+
+
+
+
+.ceilingLight{
+
+    position:absolute;
+
+
+    top:30px;
+
+    left:50%;
+
+
+    width:120px;
+
+    height:120px;
+
+
+    transform:translateX(-50%);
+
+
+    border-radius:50%;
+
+
+    background:
+
+    radial-gradient(
+    circle,
+    rgba(255,240,180,.35),
+    transparent 70%
+    );
+
+
+}
