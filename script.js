@@ -82,23 +82,29 @@ openLetter.addEventListener("click", () => {
 
     overlay.classList.add("show");
 
-    document.querySelector(".letter").style.display = "none";
+    // Show the letter first
+    document.querySelector(".letter").style.display = "block";
 
-    document.getElementById("doorScene").style.display = "flex";
+    // Hide the door
+    document.getElementById("doorScene").style.display = "none";
+
+    // Hide the button until typing is finished
+    continueButton.style.display = "none";
+
+    // Start typing
+    typeLetter();
 
 });
-
 /* ==========================
       TYPE ANIMATION
 ========================== */
-
-let index = 0;
-
 function typeLetter() {
 
     index = 0;
 
     typedText.innerHTML = "";
+
+    continueButton.style.display = "none";
 
     const typing = setInterval(() => {
 
@@ -106,7 +112,7 @@ function typeLetter() {
 
         index++;
 
-        if (index >= message.length) {
+        if(index >= message.length){
 
             clearInterval(typing);
 
@@ -114,29 +120,20 @@ function typeLetter() {
 
         }
 
-    }, 35);
+    },35);
 
 }
+
 /* ==========================
       CONTINUE BUTTON
 ========================== */
 continueButton.addEventListener("click", () => {
 
-    overlay.classList.remove("show");
+    // Hide the letter
+    document.querySelector(".letter").style.display = "none";
 
-    setTimeout(() => {
-
-        document.querySelector(".container").style.display = "none";
-
-        room.classList.add("show");
-
-        setTimeout(() => {
-
-            speech.classList.add("show");
-
-        },1200);
-
-    },600);
+    // Show the door
+    document.getElementById("doorScene").style.display = "flex";
 
 });
 
@@ -232,11 +229,21 @@ door.addEventListener("click", () => {
 
     setTimeout(() => {
 
-        document.getElementById("doorScene").style.display = "none";
+        // Hide overlay
+        overlay.classList.remove("show");
 
-        document.querySelector(".letter").style.display = "block";
+        // Hide first page
+        document.querySelector(".container").style.display = "none";
 
-        typeLetter();
+        // Show room
+        room.classList.add("show");
+
+        // Show speech bubble
+        setTimeout(() => {
+
+            speech.classList.add("show");
+
+        },1200);
 
     },1500);
 
