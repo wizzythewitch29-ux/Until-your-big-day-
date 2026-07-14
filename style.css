@@ -999,3 +999,90 @@ box-shadow:0 0 40px rgba(255,235,170,.8);
 .book:hover{
     transform:translateY(-10px) scale(1.08);
 }
+/* FIREPLACE */
+
+.fireplace{
+
+position:absolute;
+
+right:90px;
+
+bottom:150px;
+
+width:140px;
+
+height:120px;
+
+background:#d8c6ab;
+
+border-radius:12px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.fireplace::before{
+
+content:"";
+
+position:absolute;
+
+left:20px;
+
+bottom:15px;
+
+width:100px;
+
+height:70px;
+
+background:#2b1d14;
+
+border-radius:8px;
+
+}
+
+.fire{
+
+position:absolute;
+
+left:50%;
+
+bottom:30px;
+
+transform:translateX(-50%);
+
+width:45px;
+
+height:60px;
+
+background:orange;
+
+border-radius:50% 50% 40% 40%;
+
+filter:blur(1px);
+
+animation:flicker .8s infinite alternate;
+
+box-shadow:0 0 25px orange;
+
+}
+
+@keyframes flicker{
+
+0%{
+
+transform:translateX(-50%) scale(1);
+
+background:#ffb347;
+
+}
+
+100%{
+
+transform:translateX(-50%) scale(1.15);
+
+background:#ff6b00;
+
+}
+
+}
