@@ -910,3 +910,46 @@ padding:25px;
 
 
 }
+/* ===============================
+   FIX LIBRARY LAYERS
+================================ */
+
+.bookshelf {
+    z-index: 5;
+}
+
+.book {
+    z-index: 6;
+}
+
+.fireplace {
+    z-index: 5;
+}
+
+.window {
+    z-index: 2;
+}
+
+.sofa {
+    z-index: 4;
+}
+
+.table {
+    z-index: 6;
+}
+
+.mug {
+    z-index: 7;
+}
+
+.plant {
+    z-index: 6;
+}
+
+.teddy {
+    z-index: 7;
+}
+
+.avatar {
+    z-index: 8;
+}
