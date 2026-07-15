@@ -2831,4 +2831,1028 @@ JSON.stringify(save)
 /* ==================================================
                     END PART 10
 ================================================== */
+/* ==========================================================
+                STORY ENGINE
+========================================================== */
 
+const story = [
+
+{
+title:"Day 1",
+text:`Welcome, Baboo.
+
+This little world was built only for you.
+
+Every day,
+a new memory will appear.
+
+I hope it becomes your favorite place.
+
+💙`
+},
+
+{
+title:"Day 2",
+text:`Today...
+
+I just wanted to remind you that
+
+I'm really proud of you.
+
+Even if nobody says it.
+
+I always will.`
+},
+
+{
+title:"Day 3",
+text:`Look outside the window.
+
+Imagine we're watching the rain together.
+
+No phones.
+
+No worries.
+
+Just us.`
+},
+
+{
+title:"Day 4",
+text:`Today's mission:
+
+Smile once.
+
+That's it.
+
+Mission complete.`
+},
+
+{
+title:"Day 5",
+text:`The teddy told me something.
+
+It said...
+
+it likes you more than me.
+
+I think it's right.`
+},
+
+{
+title:"Day 6",
+text:`One more page.
+
+One more day.
+
+One step closer.
+
+I'm excited already.`
+};
+
+let currentStory=0;
+
+function unlockedStory(){
+
+const start=new Date("2026-07-13");
+
+const today=new Date();
+
+start.setHours(0,0,0,0);
+
+today.setHours(0,0,0,0);
+
+const diff=Math.floor(
+
+(today-start)/86400000
+
+);
+
+return Math.max(1,diff+1);
+
+}
+/* ==========================================================
+                STORYBOOK ENGINE
+                PART 1
+========================================================== */
+
+const chapters=[
+
+{
+title:"Chapter One",
+date:"Day 1",
+text:`Welcome, Baboo.
+
+This little place exists because of you.
+
+Every sunrise unlocks another memory.
+
+Every visit leaves another smile.
+
+I hope this becomes your favorite place.`
+},
+
+{
+title:"Chapter Two",
+date:"Day 2",
+text:`Today's reminder.
+
+I'm proud of you.
+
+More than you know.
+
+More than words can explain.`
+},
+
+{
+title:"Chapter Three",
+date:"Day 3",
+text:`Close your eyes.
+
+Imagine we're sitting together beside the fireplace.
+
+Listening to the rain.
+
+Without worrying about tomorrow.`
+},
+
+{
+title:"Chapter Four",
+date:"Day 4",
+text:`Today's mission.
+
+Smile.
+
+That's all.
+
+Mission complete.`
+},
+
+{
+title:"Chapter Five",
+date:"Day 5",
+text:`The teddy whispered something.
+
+It said you're its favorite visitor.
+
+I think it's right.`
+},
+
+{
+title:"Chapter Six",
+date:"Day 6",
+text:`We're getting closer.
+
+One page.
+
+One memory.
+
+One day at a time.`
+];
+
+const STORY_START=new Date("2026-07-13T00:00:00");
+
+function unlockedChapters(){
+
+const today=new Date();
+
+today.setHours(0,0,0,0);
+
+const start=new Date(STORY_START);
+
+start.setHours(0,0,0,0);
+
+const diff=Math.floor(
+
+(today-start)/86400000
+
+);
+
+return Math.min(
+
+chapters.length,
+
+Math.max(1,diff+1)
+
+);
+
+}
+
+let currentChapter=1;
+/* ==========================================================
+                STORYBOOK ENGINE
+                PART 2
+========================================================== */
+
+function nextChapter(){
+
+const unlocked=unlockedChapters();
+
+if(currentChapter>unlocked){
+
+showDialogue([
+
+"Not yet... Come back tomorrow."
+
+]);
+
+return;
+
+}
+
+const chapter=chapters[currentChapter-1];
+
+speech.classList.remove("show");
+
+setTimeout(()=>{
+
+speech.innerHTML=`
+
+<div class="chapterTitle">
+
+${chapter.title}
+
+</div>
+
+<div class="chapterDate">
+
+${chapter.date}
+
+</div>
+
+<br>
+
+<div class="chapterText">
+
+${chapter.text}
+
+</div>
+
+`;
+
+speech.classList.add("show");
+
+},200);
+
+currentChapter++;
+
+}
+
+/* --------------------------------------------------
+            PREVIOUS CHAPTER
+-------------------------------------------------- */
+
+function previousChapter(){
+
+if(currentChapter<=2){
+
+showDialogue([
+
+"That's where our story begins."
+
+]);
+
+return;
+
+}
+
+currentChapter-=2;
+
+nextChapter();
+
+}
+
+/* --------------------------------------------------
+            SAVE STORY
+-------------------------------------------------- */
+
+function saveStory(){
+
+localStorage.setItem(
+
+"storyChapter",
+
+currentChapter
+
+);
+
+}
+
+function loadStory(){
+
+const saved=
+
+parseInt(
+
+localStorage.getItem("storyChapter")
+
+);
+
+if(!isNaN(saved)){
+
+currentChapter=saved;
+
+}
+
+}
+
+loadStory();
+
+/* --------------------------------------------------
+            AUTO SAVE
+-------------------------------------------------- */
+
+setInterval(
+
+saveStory,
+
+10000
+
+);
+/* ==========================================================
+                STORYBOOK ENGINE
+                PART 3
+========================================================== */
+
+/* --------------------------------------------------
+        TEDDY OPENS THE BOOK
+-------------------------------------------------- */
+
+teddy.replaceWith(teddy.cloneNode(true));
+
+const storyTeddy=document.querySelector(".teddy");
+
+storyTeddy.addEventListener("click",()=>{
+
+nextChapter();
+
+});
+
+/* --------------------------------------------------
+        LOCKED CHAPTERS
+-------------------------------------------------- */
+
+function chapterLocked(){
+
+showDialogue([
+
+"Not yet...",
+
+"Another page will appear tomorrow.",
+
+"I'll be waiting for you."
+
+]);
+
+}
+
+/* --------------------------------------------------
+        DAILY RESET
+-------------------------------------------------- */
+
+const today=new Date().toDateString();
+
+const lastVisit=
+
+localStorage.getItem("lastStoryVisit");
+
+if(lastVisit!==today){
+
+localStorage.setItem(
+
+"lastStoryVisit",
+
+today
+
+);
+
+const unlocked=unlockedChapters();
+
+if(currentChapter>unlocked){
+
+currentChapter=unlocked;
+
+}
+
+}
+
+/* --------------------------------------------------
+        CHAPTER COMPLETE
+-------------------------------------------------- */
+
+function finishChapter(){
+
+showDialogue([
+
+"Thank you for reading.",
+
+"I'll have another story waiting tomorrow.",
+
+"Sweet dreams."
+
+]);
+
+}
+
+/* --------------------------------------------------
+        STORY END
+-------------------------------------------------- */
+
+function endStory(){
+
+if(currentChapter>chapters.length){
+
+speech.innerHTML=`
+
+<div class="chapterTitle">
+
+To Be Continued...
+
+</div>
+
+<br>
+
+<div class="chapterText">
+
+Tomorrow,
+
+another page will quietly appear here.
+
+Thank you for coming back every day.
+
+💙
+
+</div>
+
+`;
+
+speech.classList.add("show");
+
+return;
+
+}
+
+}
+
+/* --------------------------------------------------
+        CHECK AFTER EVERY PAGE
+-------------------------------------------------- */
+
+const originalNextChapter=nextChapter;
+
+nextChapter=function(){
+
+const unlocked=unlockedChapters();
+
+if(currentChapter>unlocked){
+
+chapterLocked();
+
+return;
+
+}
+
+originalNextChapter();
+
+saveStory();
+
+endStory();
+
+};
+
+/* ==================================================
+                END PART 3
+================================================== */
+/* ==========================================================
+                STORYBOOK ENGINE
+                PART 4
+                REAL BOOK EFFECT
+========================================================== */
+
+/* --------------------------------------------------
+        BOOK OPENING
+-------------------------------------------------- */
+
+function openBook(chapter){
+
+speech.classList.remove("show");
+
+setTimeout(()=>{
+
+speech.innerHTML=`
+
+<div class="storybook">
+
+<div class="bookCover">
+
+📖
+
+</div>
+
+<div class="bookPage">
+
+<h2>${chapter.title}</h2>
+
+<span>${chapter.date}</span>
+
+<p>
+
+${chapter.text}
+
+</p>
+
+<div class="pageNumber">
+
+${currentChapter}/${chapters.length}
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+speech.classList.add("show");
+
+animateBook();
+
+},250);
+
+}
+
+/* --------------------------------------------------
+        PAGE TURN
+-------------------------------------------------- */
+
+function animateBook(){
+
+const page=document.querySelector(".bookPage");
+
+if(!page) return;
+
+page.animate([
+
+{
+
+transform:"rotateY(-90deg)",
+
+opacity:0
+
+},
+
+{
+
+transform:"rotateY(15deg)",
+
+opacity:.6
+
+},
+
+{
+
+transform:"rotateY(0deg)",
+
+opacity:1
+
+}
+
+],{
+
+duration:900,
+
+easing:"ease"
+
+});
+
+}
+
+/* --------------------------------------------------
+        NEXT PAGE
+-------------------------------------------------- */
+
+const previousFunction=nextChapter;
+
+nextChapter=function(){
+
+const unlocked=unlockedChapters();
+
+if(currentChapter>unlocked){
+
+chapterLocked();
+
+return;
+
+}
+
+const chapter=chapters[currentChapter-1];
+
+openBook(chapter);
+
+currentChapter++;
+
+saveStory();
+
+};
+
+/* --------------------------------------------------
+        SMALL SPARKLE
+-------------------------------------------------- */
+
+function pageSparkle(){
+
+const sparkle=document.createElement("div");
+
+sparkle.className="pageSparkle";
+
+sparkle.style.left=
+
+Math.random()*80+10+"%";
+
+sparkle.style.top=
+
+Math.random()*80+10+"%";
+
+document.body.appendChild(sparkle);
+
+sparkle.animate([
+
+{
+
+opacity:0,
+
+transform:"scale(.2)"
+
+},
+
+{
+
+opacity:1,
+
+transform:"scale(1)"
+
+},
+
+{
+
+opacity:0,
+
+transform:"scale(2)"
+
+}
+
+],{
+
+duration:1800,
+
+easing:"ease-out"
+
+});
+
+setTimeout(()=>{
+
+sparkle.remove();
+
+},1800);
+
+}
+
+setInterval(()=>{
+
+if(room.classList.contains("show")){
+
+pageSparkle();
+
+}
+
+},4000);
+
+/* ==================================================
+                END PART 4
+================================================== */
+/* ==========================================================
+                STORYBOOK ENGINE
+                PART 5
+                FULL SCREEN STORYBOOK
+========================================================== */
+
+/* --------------------------------------------------
+        CREATE STORYBOOK
+-------------------------------------------------- */
+
+const book=document.createElement("div");
+
+book.id="storybookUI";
+
+book.innerHTML=`
+
+<div class="bookOverlay">
+
+<div class="bookWindow">
+
+<div class="bookLeft">
+
+<div class="bookTitle">
+
+Until Your Big Day
+
+</div>
+
+<div class="bookmark"></div>
+
+</div>
+
+<div class="bookRight">
+
+<h2 id="bookChapterTitle"></h2>
+
+<h4 id="bookChapterDay"></h4>
+
+<p id="bookChapterText"></p>
+
+<div class="bookButtons">
+
+<button id="previousPage">
+
+Previous
+
+</button>
+
+<button id="nextPage">
+
+Next
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+document.body.appendChild(book);
+
+/* --------------------------------------------------
+        VARIABLES
+-------------------------------------------------- */
+
+const storybook=document.getElementById(
+
+"storybookUI"
+
+);
+
+const titleElement=document.getElementById(
+
+"bookChapterTitle"
+
+);
+
+const dayElement=document.getElementById(
+
+"bookChapterDay"
+
+);
+
+const textElement=document.getElementById(
+
+"bookChapterText"
+
+);
+
+const nextButton=document.getElementById(
+
+"nextPage"
+
+);
+
+const previousButton=document.getElementById(
+
+"previousPage"
+
+);
+
+/* --------------------------------------------------
+        OPEN BOOK
+-------------------------------------------------- */
+
+function openStoryBook(){
+
+const chapter=
+
+chapters[currentChapter-1];
+
+storybook.classList.add("show");
+
+titleElement.innerHTML=
+
+chapter.title;
+
+dayElement.innerHTML=
+
+chapter.date;
+
+textElement.innerHTML=
+
+chapter.text;
+
+animateBook();
+
+}
+
+/* --------------------------------------------------
+        CLOSE
+-------------------------------------------------- */
+
+storybook.addEventListener(
+
+"click",
+
+(event)=>{
+
+if(
+
+event.target===storybook
+
+){
+
+storybook.classList.remove(
+
+"show"
+
+);
+
+}
+
+});
+/* ==========================================================
+                STORYBOOK ENGINE
+                PART 6
+                PAGE NAVIGATION
+========================================================== */
+
+/* --------------------------------------------------
+        DISPLAY CHAPTER
+-------------------------------------------------- */
+
+function renderBookPage(){
+
+const unlocked=unlockedChapters();
+
+if(currentChapter<1){
+
+currentChapter=1;
+
+}
+
+if(currentChapter>chapters.length){
+
+currentChapter=chapters.length;
+
+}
+
+const chapter=chapters[currentChapter-1];
+
+titleElement.textContent=
+
+chapter.title;
+
+dayElement.textContent=
+
+chapter.date;
+
+textElement.textContent=
+
+chapter.text;
+
+document.querySelector(".bookRight").animate([
+
+{
+
+opacity:0,
+
+transform:"rotateY(-8deg)"
+
+},
+
+{
+
+opacity:1,
+
+transform:"rotateY(0deg)"
+
+}
+
+],{
+
+duration:650,
+
+easing:"ease"
+
+});
+
+if(currentChapter===1){
+
+previousButton.disabled=true;
+
+}else{
+
+previousButton.disabled=false;
+
+}
+
+if(currentChapter>=unlocked){
+
+nextButton.innerHTML="Locked";
+
+}else{
+
+nextButton.innerHTML="Next";
+
+}
+
+}
+
+/* --------------------------------------------------
+        NEXT BUTTON
+-------------------------------------------------- */
+
+nextButton.addEventListener("click",()=>{
+
+const unlocked=unlockedChapters();
+
+if(currentChapter>=unlocked){
+
+showDialogue([
+
+"Not yet...",
+
+"Tomorrow another page will appear.",
+
+"I'll keep it safe until then."
+
+]);
+
+return;
+
+}
+
+currentChapter++;
+
+renderBookPage();
+
+saveStory();
+
+});
+
+/* --------------------------------------------------
+        PREVIOUS BUTTON
+-------------------------------------------------- */
+
+previousButton.addEventListener("click",()=>{
+
+if(currentChapter<=1){
+
+return;
+
+}
+
+currentChapter--;
+
+renderBookPage();
+
+});
+
+/* --------------------------------------------------
+        OPEN FROM TEDDY
+-------------------------------------------------- */
+
+storyTeddy.addEventListener("click",()=>{
+
+storybook.classList.add("show");
+
+renderBookPage();
+
+});
+
+/* --------------------------------------------------
+        ESC KEY
+-------------------------------------------------- */
+
+document.addEventListener("keydown",(event)=>{
+
+if(event.key==="Escape"){
+
+storybook.classList.remove("show");
+
+}
+
+});
+
+/* ==================================================
+                END PART 6
+================================================== */
